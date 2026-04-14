@@ -35,7 +35,7 @@ export default function GoalSection() {
         },
     ];
 
-    const [hoveredIndex, setHoveredIndex] = useState(null);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
         <div
