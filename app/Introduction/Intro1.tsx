@@ -62,13 +62,20 @@ const containerVariants = {
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 25, filter: "blur(10px)" },
+    hidden: {
+        opacity: 0,
+        y: 20,
+        filter: "blur(10px)"
+    },
     visible: {
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
-        transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
-    },
+        transition: {
+            duration: 0.6,
+            ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] // ✅ FIX
+        }
+    }
 };
 
 export default function AboutPage() {
@@ -89,8 +96,8 @@ export default function AboutPage() {
                 />
 
                 <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
-                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-[#fcfaf7] opacity-80" />
-                 
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-[#fcfaf7] opacity-80" />
+
 
             </div>
             <section className="relative w-full  flex items-center overflow-hidden ">
@@ -236,7 +243,7 @@ export default function AboutPage() {
                 </div >
 
                 {/* RIGHT IMAGE SECTION - KHÔNG THAY ĐỔI CẤU TRÚC, CHỈ TỐI ƯU HIỂN THỊ */}
-                <div div className="hidden md:block absolute right-0 top-0 h-full w-[47%] z-10" >
+                <div className="hidden md:block absolute right-0 top-0 h-full w-[47%] z-10" >
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="relative h-full w-full">
                         <Image
                             src="/Picture/khenthuong/l8.jpg"
