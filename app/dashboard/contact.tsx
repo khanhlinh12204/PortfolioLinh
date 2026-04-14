@@ -6,10 +6,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Send, Sparkles, Star } from 'lucide-react';
 
 const PETALS_COUNT = 15;
-
+type Petal = {
+    id: number;
+    x: number;
+    delay: number;
+    duration: number;
+    size: number;
+    type: string;
+};
 const ContactAndFooter = () => {
     const [isMounted, setIsMounted] = useState(false);
-    const [petals, setPetals] = useState([]);
+    const [petals, setPetals] = useState<Petal[]>([]);
 
     useEffect(() => {
         setIsMounted(true);
