@@ -33,20 +33,52 @@ export default function JourneyStorySection() {
     useEffect(() => { setIsMounted(true); }, []);
     if (!isMounted) return null;
 
-    const formatHighlightText = (sentence) => {
-        const keywords = ["Sinh viên 5 tốt", "ICPC", "Intern", "Học bổng", "Trưởng ban", "tư duy", "sáng tạo", "giải quyết vấn đề"];
-        let parts = [sentence];
+    const formatHighlightText = (sentence: string): React.ReactNode => {
+        const keywords = [
+            "Sinh viên 5 tốt",
+            "ICPC",
+            "Intern",
+            "Học bổng",
+            "Trưởng ban",
+            "tư duy",
+            "sáng tạo",
+            "giải quyết vấn đề"
+        ];
+
+        const escapeRegExp = (text: string) =>
+            text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+        let parts: (string | React.ReactNode)[] = [sentence];
+
         keywords.forEach(word => {
-            let newParts = [];
+            let newParts: (string | React.ReactNode)[] = [];
+
             parts.forEach(part => {
                 if (typeof part === 'string') {
-                    const splitParts = part.split(new RegExp(`(${word})`, 'gi'));
+                    const splitParts = part.split(
+                        new RegExp(`(${escapeRegExp(word)})`, 'gi')
+                    );
                     newParts.push(...splitParts);
-                } else { newParts.push(part); }
+                } else {
+                    newParts.push(part);
+                }
             });
+
             parts = newParts;
         });
-        return parts.map((part, i) => keywords.some(kw => kw.toLowerCase() === String(part).toLowerCase()) ? <span key={i} className="text-[#b53d54] font-black">{part}</span> : part);
+
+        const isKeyword = (part: string) =>
+            keywords.some(kw => kw.toLowerCase() === part.toLowerCase());
+
+        return parts.map((part, i) =>
+            typeof part === "string" && isKeyword(part) ? (
+                <span key={i} className="text-[#b53d54] font-black">
+                    {part}
+                </span>
+            ) : (
+                <React.Fragment key={i}>{part}</React.Fragment>
+            )
+        );
     };
 
     return (
@@ -200,7 +232,7 @@ export default function JourneyStorySection() {
                                 </div>
 
                                 <div className="pt-2 space-y-4">
-                                    {card.desc.split('.').filter(s => s.trim() !== "").map((sentence, idx) => {
+                                    {card.desc.split('.').filter((s: string) => s.trim() !== "").map((sentence: string, idx: number) => {
                                         const style = GLOSSY_STYLES[idx % GLOSSY_STYLES.length];
                                         const isLeft = card.isReversed ? (idx % 2 !== 0) : (idx % 2 === 0);
                                         return (
