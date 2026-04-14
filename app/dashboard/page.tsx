@@ -54,9 +54,9 @@ const Appdashboard = () => {
 
                             {/* 2. LỚP NHÂN VẬT & TÊN KHÁNH LINH */}
                             <div className="absolute inset-0 z-10 p-12 md:p-14 flex items-center justify-center">
-                                <div className="relative w-full h-full -mt-6">
+                                <div className="relative w-full h-[420px] -mt-6">
                                     <Image
-                                        src="/picture/anhcv/Khanhlinh.png"
+                                        src="/picture/anhcv/khanhlinh.png"
                                         alt="Khánh Linh"
                                         fill
                                         className="object-contain"
@@ -218,20 +218,20 @@ const Appdashboard = () => {
             <div className="relative z-40">
                 <Intro />
             </div>
-             
-             <div className="relative z-40">
+
+            <div className="relative z-40">
                 <AwardsSection />
             </div>
-             <div className="relative z-40">
+            <div className="relative z-40">
                 <JourneySection />
             </div>
-            
-             <div className="relative z-40">
+
+            <div className="relative z-40">
                 <ContactSection />
             </div>
         </div>
-        
-       
+
+
     );
 };
 
