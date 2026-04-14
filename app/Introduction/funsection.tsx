@@ -1,9 +1,8 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Users, Target, Zap, MessageSquare, Award, BookOpen, Heart, Wallet, Sparkles } from 'lucide-react';
-
+import { motion, Variants } from "framer-motion";
 const LEADERSHIP_DATA = [
     {
         role: "Ủy viên Liên Chi Hội",
