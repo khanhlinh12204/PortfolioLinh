@@ -14,6 +14,11 @@ type Petal = {
     size: number;
     type: string;
 };
+type PetalCustom = {
+    x: number;
+    delay: number;
+    duration: number;
+};
 const ContactAndFooter = () => {
     const [isMounted, setIsMounted] = useState(false);
     const [petals, setPetals] = useState<Petal[]>([]);
@@ -33,9 +38,13 @@ const ContactAndFooter = () => {
 
     const petalVariants = {
         hidden: { y: '-10vh', opacity: 0 },
-        visible: (custom) => ({
+        visible: (custom: PetalCustom) => ({
             y: '110vh',
-            x: [`${custom.x}%`, `${custom.x + (Math.random() > 0.5 ? 5 : -5)}%`, `${custom.x}%`],
+            x: [
+                `${custom.x}%`,
+                `${custom.x + (Math.random() > 0.5 ? 5 : -5)}%`,
+                `${custom.x}%`
+            ],
             opacity: [0, 1, 1, 0],
             rotate: [0, 360],
             transition: {
@@ -227,7 +236,10 @@ const ContactAndFooter = () => {
                             </div>
 
                             <motion.button
-                                whileHover={{ y: -5, shadow: "0 20px 40px -10px rgba(216,81,101,0.5)" }}
+                                whileHover={{
+                                    y: -5,
+                                    boxShadow: "0 20px 40px -10px rgba(216,81,101,0.5)"
+                                }}
                                 whileTap={{ scale: 0.98 }}
                                 className="w-full py-5 bg-[#d85165] text-white rounded-2xl font-black uppercase tracking-widest text-[11px] relative overflow-hidden group shadow-lg"
                             >
