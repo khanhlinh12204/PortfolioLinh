@@ -2,10 +2,25 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
 
-// --- ĐỊNH NGHĨA ICON SVG TRỰC TIẾP ---
-const SVGIcon = ({ children, size = 20, color = "currentColor" }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+type SVGIconProps = {
+    children: ReactNode;
+    size?: number;
+    color?: string;
+};
+
+const SVGIcon = ({ children, size = 20, color = "currentColor" }: SVGIconProps) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
         {children}
     </svg>
 );
@@ -129,7 +144,9 @@ export default function CTASection() {
                                             src="/Picture/khenthuong/l4.jpg"
                                             alt="Portrait"
                                             className="w-full h-full object-cover scale-110"
-                                            onError={(e) => { e.target.src = "https://via.placeholder.com/150"; }} // Fallback nếu sai link
+                                            onError={(e) => {
+                                                (e.target as HTMLImageElement).src = "https://via.placeholder.com/150";
+                                            }}
                                         />
                                     </motion.div>
                                 </div>
