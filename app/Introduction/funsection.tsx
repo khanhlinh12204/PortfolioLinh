@@ -43,16 +43,20 @@ const SKILLS = [
 ];
 
 // Hiệu ứng xuất hiện mượt mà khi cuộn xuống
-const cardVariants = {
-    offscreen: { opacity: 0, y: 30 },
-    onscreen: (i = 0) => ({
+const cardVariants: Variants = {
+    offscreen: {
+        opacity: 0,
+        y: 50
+    },
+
+    onscreen: (i: number = 0) => ({
         opacity: 1,
         y: 0,
         transition: {
-            type: "spring",
-            bounce: 0.2,
+            type: "spring" as const,
+            bounce: 0.4,
             duration: 0.8,
-            delay: i * 0.1 // Tạo hiệu ứng xuất hiện lần lượt
+            delay: i * 0.2
         }
     })
 };
