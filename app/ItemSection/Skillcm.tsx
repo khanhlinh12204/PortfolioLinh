@@ -54,7 +54,13 @@ const skillsData = [
 ];
 
 const FloatingPetals = () => {
-  const [petals, setPetals] = useState([]);
+  const [petals, setPetals] = useState<{
+    id: number;
+    left: number;
+    delay: number;
+    duration: number;
+    size: number;
+  }[]>([]);
   useEffect(() => {
     const newPetals = Array.from({ length: 15 }).map((_, i) => ({
       id: i,
