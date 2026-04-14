@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, Rocket, Trophy, Sparkles, Target, ChevronRight } from "lucide-react";
-
+import { motion, Variants } from "framer-motion";
 export default function GoalSection() {
     const goals = [
         {
@@ -99,7 +98,7 @@ export default function GoalSection() {
                 <div className="relative text-center mb-12">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full select-none pointer-events-none opacity-[0.1] overflow-hidden">
                         <span className="text-[100px] md:text-[140px] font-black whitespace-nowrap uppercase tracking-tighter text-[#4a3728]">
-                             MISSION
+                            MISSION
                         </span>
                     </div>
 
@@ -116,12 +115,12 @@ export default function GoalSection() {
 
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative">
                         <h2 className="text-4xl md:text-6xl font-black text-[#4a3728] tracking-tighter leading-tight drop-shadow-md">
-                           Mục tiêu tương lai<br />
+                            Mục tiêu tương lai<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b53d54] via-[#f2cbd4] to-[#b53d54] animate-pulse">
                                 của mình
                             </span>
                         </h2>
-                         <p className="text-sm font-medium text-[#4a3728]/60 italic max-w-md mx-auto">
+                        <p className="text-sm font-medium text-[#4a3728]/60 italic max-w-md mx-auto">
                             Sinh viên Khoa học máy tính với định hướng phát triển lâu dài trong công nghệ
                         </p>
                     </motion.div>
