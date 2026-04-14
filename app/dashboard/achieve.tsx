@@ -12,7 +12,7 @@ const AwardsSection = () => {
             tag: "sinh viên 5 tốt",
             title: "Sinh viên 5 tốt",
             desc: "Đạt danh hiệu Sinh viên 5 tốt 2 năm liên tiếp (2023 – 2024)",
-            image: "/Picture/khenthuong/sv5t.jpg",
+            image: "/picture/khenthuong/sv5t.jpg",
             icon: "🎓"
         },
         {
@@ -20,7 +20,7 @@ const AwardsSection = () => {
             tag: "Sinh viên xuất sắc",
             title: "Sinh viên xuất sắc",
             desc: "Đạt danh hiệu Sinh viên Giỏi, Xuất Sắc trong 3 năm học(2022 – 2024)",
-            image: "/Picture/khenthuong/hssx1.jpg",
+            image: "/picture/khenthuong/hssx1.jpg",
             icon: "🌸"
         },
         {
@@ -28,7 +28,7 @@ const AwardsSection = () => {
             tag: "Cán bộ Đoàn - hội",
             title: "Thành tích công tác Đoàn",
             desc: "Đã có thành tích xuất sắc trong công tác Đoàn năm 2024 - 2025",
-            image: "/Picture/khenthuong/doanhoi.jpg",
+            image: "/picture/khenthuong/doanhoi.jpg",
             icon: "⭐"
         },
         {
@@ -36,7 +36,7 @@ const AwardsSection = () => {
             tag: "Học bổng",
             title: "Học bổng “NEVER GIVE UP” (2024)",
             desc: "Đạt học bổng chương trình học bổng “NEVER GIVE UP” năm 2024",
-            image: "/Picture/khenthuong/hb.jpg",
+            image: "/picture/khenthuong/hb.jpg",
             icon: "🌿"
         }
     ];
@@ -47,7 +47,7 @@ const AwardsSection = () => {
             {/* 1. LAYER BACKGROUND TĨNH */}
             <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
                 <Image
-                    src="/Picture/anhcv/background.jpg"
+                    src="/picture/anhcv/background.jpg"
                     alt="decor"
                     fill
                     className="object-cover object-center opacity-30"

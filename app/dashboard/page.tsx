@@ -17,7 +17,7 @@ const Appdashboard = () => {
                 {/* --- LỚP 1: BACKGROUND TOÀN MÀN HÌNH --- */}
                 <div className="absolute inset-0 z-10 pointer-events-none">
                     <Image
-                        src="/Picture/anhcv/background.jpg"
+                        src="/picture/anhcv/background.jpg"
                         alt="Background Decor"
                         fill
                         className="object-cover opacity-90"
@@ -45,7 +45,7 @@ const Appdashboard = () => {
                             {/* 1. LỚP KHUNG NỀN */}
                             <div className="absolute inset-0 z-0">
                                 <Image
-                                    src="/Picture/anhcv/nen2.png"
+                                    src="/picture/anhcv/nen2.png"
                                     alt="Khung nền"
                                     fill
                                     className="object-contain"
@@ -56,7 +56,7 @@ const Appdashboard = () => {
                             <div className="absolute inset-0 z-10 p-12 md:p-14 flex items-center justify-center">
                                 <div className="relative w-full h-full -mt-6">
                                     <Image
-                                        src="/Picture/anhcv/Khanhlinh.png"
+                                        src="/picture/anhcv/Khanhlinh.png"
                                         alt="Khánh Linh"
                                         fill
                                         className="object-contain"

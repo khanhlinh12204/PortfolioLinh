@@ -36,7 +36,7 @@ const StudentJourneyMirror = () => {
     return (
         <div
             className="relative w-full min-h-screen py-20 flex flex-col items-center justify-center bg-cover bg-center bg-fixed overflow-hidden"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             {/* Overlay nền mờ tổng thể */}
             <div className="absolute inset-0 bg-white/15 backdrop-blur-[3px]" />
@@ -151,7 +151,7 @@ const StudentJourneyMirror = () => {
                         {/* THẺ 2: ẢNH KỶ NIỆM 1 */}
                         <motion.div variants={fadeInUp} className="md:col-span-4 bg-gray-200 rounded-[35px] overflow-hidden shadow-lg border border-white/20 relative group">
                             <img
-                                src="/Picture/khenthuong/anhfr.jpg"
+                                src="/picture/khenthuong/anhfr.jpg"
                                 alt="Kỷ niệm 2024"
                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                             />
@@ -175,7 +175,7 @@ const StudentJourneyMirror = () => {
 
                         {/* THẺ 4: ẢNH KỶ NIỆM 2 */}
                         <motion.div variants={fadeInUp} className="md:col-span-3 bg-gray-200 rounded-[35px] h-[200px] md:h-full overflow-hidden border border-white/20 group">
-                            <img src="/Picture/khenthuong/anhicpc1.jpg" alt="Research" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <img src="/picture/khenthuong/anhicpc1.jpg" alt="Research" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                         </motion.div>
 
                         {/* THẺ 5: 2025 - NCKH */}

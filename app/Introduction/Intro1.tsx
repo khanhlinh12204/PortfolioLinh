@@ -16,7 +16,7 @@ const INFO_STATS = [
 // CHỈ THAY ĐỔI MẢNG NÀY ĐỂ ẢNH TO VÀ AN TOÀN
 const IMAGE_TAGS = [
     {
-        src: "/Picture/khenthuong/l12.jpg",
+        src: "/picture/khenthuong/l12.jpg",
         alt: "Project 01",
         position: "top-[5%] left-[5%]", // Sát lề trên và trái (an toàn)
         yValues: [-20, 20],
@@ -25,7 +25,7 @@ const IMAGE_TAGS = [
         delay: 0
     },
     {
-        src: "/Picture/khenthuong/l4.jpg",
+        src: "/picture/khenthuong/l4.jpg",
         alt: "Project 02",
         position: "bottom-[10%] left-[10%]", // Sát lề dưới
         yValues: [20, -20],
@@ -34,7 +34,7 @@ const IMAGE_TAGS = [
         delay: 0.5
     },
     {
-        src: "/Picture/khenthuong/l15.jpg",
+        src: "/picture/khenthuong/l15.jpg",
         alt: "Achievement",
         position: "top-[10%] right-[10%]", // Sát lề phải
         yValues: [-15, 15],
@@ -43,7 +43,7 @@ const IMAGE_TAGS = [
         delay: 1
     },
     {
-        src: "/Picture/khenthuong/l10.jpg",
+        src: "/picture/khenthuong/l10.jpg",
         alt: "Activity",
         position: "bottom-[15%] right-[5%]",
         yValues: [10, -10],
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <main className="bg-[#fcfaf7] ">
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/Picture/anhcv/background.jpg"
+                    src="/picture/anhcv/background.jpg"
                     alt="Full Background"
                     fill
                     className="object-cover "
@@ -246,7 +246,7 @@ export default function AboutPage() {
                 <div className="hidden md:block absolute right-0 top-0 h-full w-[47%] z-10" >
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="relative h-full w-full">
                         <Image
-                            src="/Picture/khenthuong/l8.jpg"
+                            src="/picture/khenthuong/l8.jpg"
                             alt="Linh"
                             fill
                             className="object-cover grayscale-[10%] contrast-[1.05]"

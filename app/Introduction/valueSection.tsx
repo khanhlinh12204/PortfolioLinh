@@ -37,7 +37,7 @@ export default function MindsetSection() {
     return (
         <div
             className="relative w-full py-16 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             {/* HIỆU ỨNG HOA LÁ RƠI */}
             <div className="absolute inset-0 pointer-events-none z-10">

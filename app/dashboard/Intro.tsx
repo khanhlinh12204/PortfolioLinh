@@ -47,7 +47,7 @@ export default function Intro() {
             {/* --- 1. LỚP NỀN DECOR & GRADIENT --- */}
             <div className="absolute inset-0 z-0 opacity-20">
                 <Image
-                    src="/Picture/anhcv/bg.jpg"
+                    src="/P=picture/anhcv/bg.jpg"
                     alt="Background"
                     fill
                     className="object-cover blur-[2px]"
@@ -108,7 +108,7 @@ export default function Intro() {
                             className="relative w-full h-full overflow-hidden border-4 border-white shadow-2xl z-10 "
                         >
                             <Image
-                                src="/Picture/anhcv/anhgt.jpg"
+                                src="/picture/anhcv/anhgt.jpg"
                                 alt="Khánh Linh"
                                 fill
                                 className="object-cover scale-110 group-hover:scale-105 transition-transform duration-700"

@@ -20,7 +20,7 @@ const AboutMeSection = () => {
     return (
         <div
             className="relative w-full py-16 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             <div className="absolute inset-0 pointer-events-none z-10">
                 {[...Array(15)].map((_, i) => (
@@ -84,7 +84,7 @@ const AboutMeSection = () => {
 
                             <div className="relative h-full w-full rounded-[60px] overflow-hidden border-8 border-white shadow-2xl z-10">
                                 <img
-                                    src="/Picture/khenthuong/l2.jpg"
+                                    src="/picture/khenthuong/l2.jpg"
                                     alt="Nguyễn Khánh Linh"
                                     className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                                 />

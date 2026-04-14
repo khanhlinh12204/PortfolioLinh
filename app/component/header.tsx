@@ -56,7 +56,7 @@ export default function Header() {
                     <Link href="/">
                         <div className="absolute top-[-45px] md:top-[-75px] left-0">
                             <Image
-                                src="/Picture/anhcv/anhlogo3.png"
+                                src="/picture/anhcv/anhlogo3.png"
                                 alt="logo Khánh Linh"
                                 width={320}
                                 height={160}

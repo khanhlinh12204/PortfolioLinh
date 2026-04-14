@@ -41,7 +41,7 @@ const InternshipRoadmap = () => {
     return (
         <div
             className="relative w-full py-28 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             <div className="absolute inset-0 bg-white/10 backdrop-blur-[3px] pointer-events-none" />
 
@@ -133,7 +133,7 @@ const InternshipRoadmap = () => {
                         >
                             <div className="relative w-full h-full rounded-[40px] overflow-hidden border-4 border-white shadow-2xl group/img">
                                 <img
-                                    src="/Picture/khenthuong/tt.jpg"
+                                    src="/picture/khenthuong/tt.jpg"
                                     alt="Internship Journey"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-130"
                                 />

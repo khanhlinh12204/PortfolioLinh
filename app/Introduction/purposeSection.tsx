@@ -40,7 +40,7 @@ export default function GoalSection() {
     return (
         <div
             className="relative w-full py-20 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden z-0"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             {/* 1. HIỆU ỨNG HOA LÁ RƠI */}
             <div className="absolute inset-0 pointer-events-none z-10">

@@ -51,7 +51,7 @@ export default function CTASection() {
     return (
         <div
             className="relative w-full py-20 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             {/* 1. HIỆU ỨNG CÁNH HOA BAY PHƠI PHỚI (nền) */}
             <div className="absolute inset-0 pointer-events-none z-10">
@@ -141,7 +141,7 @@ export default function CTASection() {
                                         className="w-24 h-24 md:w-36 md:h-36 rounded-full overflow-hidden border-[6px] border-white shadow-3xl relative z-10"
                                     >
                                         <img
-                                            src="/Picture/khenthuong/l4.jpg"
+                                            src="/picture/khenthuong/l4.jpg"
                                             alt="Portrait"
                                             className="w-full h-full object-cover scale-110"
                                             onError={(e) => {

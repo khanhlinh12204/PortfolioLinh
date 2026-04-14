@@ -64,7 +64,7 @@ const ContactAndFooter = () => {
             {/* 1. BACKGROUND ĐÃ ĐƯỢC THU NHỎ (FIXED) */}
             <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
                 <Image
-                    src="/Picture/anhcv/background.jpg"
+                    src="/picture/anhcv/background.jpg"
                     alt="decor"
                     fill
                     className="object-cover object-center opacity-30"
@@ -160,7 +160,7 @@ const ContactAndFooter = () => {
                         className="relative w-full md:w-3/4 aspect-[16/9] rounded-[50px] overflow-hidden shadow-2xl z-0"
                     >
                         <Image
-                            src="/Picture/khenthuong/anhlinh1.jpg"
+                            src="/picture/khenthuong/anhlinh1.jpg"
                             alt="Portrait"
                             fill
                             className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"

@@ -103,7 +103,7 @@ const FloatingPetals = () => {
 export default function SkillSection() {
   return (
     <section className="relative w-full py-10 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-      style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }} >
+      style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }} >
       {/* Lớp phủ phía trên ảnh nền */}
       <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
       {/* 📸 PHẦN CHỈNH SỬA: BACKGROUND NỀN TOÀN TRANG */}

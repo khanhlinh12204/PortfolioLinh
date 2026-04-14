@@ -10,7 +10,7 @@ const softSkills = [
         title: "Teamwork & Communication",
         sub: "Sự thấu hiểu từ trái tim",
         desc: "Có khả năng làm việc nhóm hiệu quả, giao tiếp rõ ràng và phối hợp tốt trong các dự án học thuật và hoạt động tập thể.",
-        image: "/Picture/khenthuong/anhhd11.jpg",
+        image: "/picture/khenthuong/anhhd11.jpg",
         icon: <Users size={18} />,
         color: "bg-pink-100/30",
         glowColor: "shadow-[0_0_15px_rgba(216,81,101,0.2)]",
@@ -21,7 +21,7 @@ const softSkills = [
         title: "Active Listening",
         sub: "Dẫn dắt nhẹ nhàng, hiệu quả",
         desc: "Biết lắng nghe, tiếp thu ý kiến đóng góp và phản hồi một cách tích cực để cải thiện bản thân.",
-        image: "/Picture/khenthuong/anhhd12.jpg",
+        image: "/picture/khenthuong/anhhd12.jpg",
         icon: <MessageCircle size={18} />,
         color: "bg-orange-100/30",
         glowColor: "shadow-[0_0_15px_rgba(255,165,0,0.2)]",
@@ -32,7 +32,7 @@ const softSkills = [
         title: "Problem Solving",
         sub: "Gỡ nút thắt bằng sự tỉ mỉ",
         desc: "Có tư duy phân tích và khả năng giải quyết vấn đề logic trong học tập cũng như trong lập trình.",
-        image: "/Picture/khenthuong/anhhd13.jpg",
+        image: "/picture/khenthuong/anhhd13.jpg",
         icon: <Brain size={18} />,
         color: "bg-blue-100/30",
         glowColor: "shadow-[0_0_15px_rgba(0,191,255,0.2)]",
@@ -43,7 +43,7 @@ const softSkills = [
         title: "Self-learning",
         sub: "Nhịp điệu của sự cân bằng",
         desc: "Chủ động tìm tòi, học hỏi công nghệ mới và không ngừng nâng cao kiến thức cá nhân.",
-        image: "/Picture/khenthuong/anhhd14.jpg",
+        image: "/picture/khenthuong/anhhd14.jpg",
         icon: <BookOpen size={18} />,
         color: "bg-purple-100/30",
         glowColor: "shadow-[0_0_15px_rgba(128,0,128,0.2)]",
@@ -54,7 +54,7 @@ const softSkills = [
         title: "Time Management",
         sub: "Quản trị thời gian",
         desc: "Biết quản lý thời gian hợp lý giữa học tập, hoạt động ngoại khóa và phát triển cá nhân.",
-        image: "/Picture/khenthuong/anhhd15.jpg",
+        image: "/picture/khenthuong/anhhd15.jpg",
         icon: <Timer size={18} />,
         color: "bg-pink-100/30",
         glowColor: "shadow-[0_0_15px_rgba(216,81,101,0.2)]",
@@ -65,7 +65,7 @@ const softSkills = [
         title: "Leadership & Organization",
         sub: "Điều phối & Tổ chức",
         desc: "Có kinh nghiệm tổ chức hoạt động, điều phối công việc và làm việc với vai trò quản lý trong các CLB và lớp học.",
-        image: "/Picture/khenthuong/anhhd17.jpg",
+        image: "/picture/khenthuong/anhhd17.jpg",
         icon: <Target size={18} />,
         color: "bg-orange-100/30",
         glowColor: "shadow-[0_0_15px_rgba(255,165,0,0.2)]",
@@ -76,7 +76,7 @@ const softSkills = [
         title: "Teaching Assistant",
         sub: "Hỗ trợ giảng dạy",
         desc: "Hỗ trợ giảng dạy, hướng dẫn các bạn sinh viên khác trong học tập và lập trình cơ bản.",
-        image: "/Picture/khenthuong/anhsp.jpg",
+        image: "/picture/khenthuong/anhsp.jpg",
         icon: <GraduationCap size={18} />,
         color: "bg-blue-100/30",
         glowColor: "shadow-[0_0_15px_rgba(0,191,255,0.2)]",
@@ -91,7 +91,7 @@ export default function SoftSkillSoftDesign() {
 
     return (
         <section className="relative w-full py-3 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}>
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}>
 
             {/* Lớp phủ mờ nền */}
             <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
@@ -215,11 +215,11 @@ export default function SoftSkillSoftDesign() {
                         <div className="absolute -top-10 -right-10 w-32 h-32 opacity-40 rotate-12 pointer-events-none z-20"><span className="text-7xl">🌸</span></div>
                         <div className="absolute -bottom-5 -left-10 w-24 h-24 opacity-30 -rotate-12 pointer-events-none z-20"><span className="text-6xl">🌿</span></div>
                         <div className="absolute inset-0 z-0 scale-160">
-                            <Image src="/Picture/anhcv/nen2.png" alt="Khung" fill className="object-contain opacity-90 pl-15 -mt-8" />
+                            <Image src="/picture/anhcv/nen2.png" alt="Khung" fill className="object-contain opacity-90 pl-15 -mt-8" />
                         </div>
                         <div className="absolute inset-0 z-10 w-200 flex items-center justify-center pr-55">
                             <div className="relative w-full h-full">
-                                <Image src="/Picture/khenthuong/clb3.png" alt="Khánh Linh" fill className="object-contain drop-shadow-6xl" priority />
+                                <Image src="/picture/khenthuong/clb3.png" alt="Khánh Linh" fill className="object-contain drop-shadow-6xl" priority />
                             </div>
                         </div>
                         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-30 w-full text-center">

@@ -64,7 +64,7 @@ export default function LeadershipSection() {
     return (
         <div
             className="relative w-full py-20 bg-cover bg-center bg-no-repeat bg-fixed"
-            style={{ backgroundImage: "url('/Picture/anhcv/background.jpg')" }}
+            style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             {/* Hiệu ứng hoa rơi giữ nguyên */}
             <div className="absolute inset-0 pointer-events-none z-10">

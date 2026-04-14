@@ -37,7 +37,7 @@ const Footer = () => {
             {/* BACKGROUND */}
             <div className="absolute inset-0 z-0 opacity-20">
                 <img
-                    src="/Picture/anhcv/background.jpg"
+                    src="/picture/anhcv/background.jpg"
                     className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#fcfaf7] via-transparent to-[#fcfaf7]" />
@@ -76,7 +76,7 @@ const Footer = () => {
                         <div className="flex items-center gap-4">
                             <div className="w-[4px] h-16 bg-[#d85165]" />
                             <img
-                                src="/Picture/anhcv/logo4.png"
+                                src="/picture/anhcv/logo4.png"
                                 className="h-24 object-contain"
                             />
                         </div>

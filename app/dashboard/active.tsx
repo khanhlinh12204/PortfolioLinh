@@ -11,40 +11,40 @@ const DATA = [
         title: "Câu lạc bộ Hỗ trợ Lập trình",
         quote: "Sẻ chia tri thức, cùng nhau nâng cao kỹ năng thực tế cho cộng đồng sinh viên.",
         desc: "Tham gia hỗ trợ kiến thức chuyên môn cho các bạn sinh viên, góp phần xây dựng môi trường học tập năng động và hiện đại.",
-        img1: "/Picture/khenthuong/hdclb.jpg",
-        img2: "/Picture/khenthuong/hdclb3.jpg"
+        img1: "/picture/khenthuong/hdclb.jpg",
+        img2: "/picture/khenthuong/hdclb3.jpg"
     },
     {
         tag: "Hoạt động văn nghệ",
         title: "Tham gia hoạt động văn nghệ",
         quote: "Góp phần tạo nên những tiết mục ý nghĩa, kết nối tinh thần tập thể và lan tỏa năng lượng tích cực trong môi trường sinh viên.",
         desc: "Tham gia biểu diễn và hỗ trợ các hoạt động văn nghệ trong trường và câu lạc bộ, góp phần xây dựng môi trường sinh hoạt năng động, gắn kết và giàu cảm xúc.",
-        img1: "/Picture/khenthuong/anhvn1 (1).jpg",
-        img2: "/Picture/khenthuong/anhvn1 (2).jpg"
+        img1: "/picture/khenthuong/anhvn1 (1).jpg",
+        img2: "/picture/khenthuong/anhvn1 (2).jpg"
     },
     {
         tag: "Cống hiến Cộng đồng",
         title: "Đồng hành cùng CLB Hỗ trợ Lập trình",
         quote: "Sát cánh cùng đồng đội, biến những dòng code khô khan thành những giá trị thực tiễn cho sinh viên.",
         desc: "Trực tiếp tham gia điều phối các buổi học nhóm, cố vấn kỹ thuật và xây dựng các tài liệu hướng dẫn lập trình, giúp các thành viên mới vượt qua rào cản công nghệ và cùng nhau phát triển trong môi trường chuyên nghiệp.",
-        img1: "/Picture/khenthuong/anhsm.jpg",
-        img2: "/Picture/khenthuong/anhsm1.jpg"
+        img1: "/picture/khenthuong/anhsm.jpg",
+        img2: "/picture/khenthuong/anhsm1.jpg"
     },
     {
         tag: "Phụng sự Cộng đồng",
         title: "Chiến dịch Hỗ trợ Chống dịch COVID-19",
         quote: "Sẻ chia khó khăn, lan tỏa sức trẻ để cùng cộng đồng vượt qua những giai đoạn thử thách.",
         desc: "Trực tiếp tham gia hỗ trợ công tác điều phối, phân phối nhu yếu phẩm và hỗ trợ lực lượng tuyến đầu, góp phần đảm bảo an sinh xã hội và lan tỏa năng lượng tích cực trong cộng đồng.",
-        img1: "/Picture/khenthuong/chiendich (2).jpg",
-        img2: "/Picture/khenthuong/chiendich.jpg"
+        img1: "/picture/khenthuong/chiendich (2).jpg",
+        img2: "/picture/khenthuong/chiendich.jpg"
     },
     {
         tag: "Hoạt động cộng đồng",
         title: "Hiến tóc vì cộng đồng",
         quote: "Trao đi một phần nhỏ của mình để mang lại niềm vui và hy vọng cho người khác.",
         desc: "Tham gia chương trình hiến tóc nhằm hỗ trợ bệnh nhân ung thư, góp phần lan tỏa tinh thần sẻ chia và những giá trị nhân văn trong cộng đồng.",
-        img1: "/Picture/khenthuong/hientoc.jpg",
-        img2: "/Picture/khenthuong/hientoc.jpg"
+        img1: "/picture/khenthuong/hientoc.jpg",
+        img2: "/picture/khenthuong/hientoc.jpg"
     }
 ];
 
@@ -68,7 +68,7 @@ const JourneySection = () => {
             {/* BACKGROUND */}
             <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
                 <Image
-                    src="/Picture/anhcv/bg.jpg"
+                    src="/picture/anhcv/bg.jpg"
                     alt="decor"
                     fill
                     className="object-cover object-center opacity-30"
