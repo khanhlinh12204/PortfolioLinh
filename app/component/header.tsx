@@ -29,7 +29,7 @@ export default function Header() {
             name: "Dự Án", href: "/ProjectSection",
         },
         {
-            name: "Hoạt động", href: "#hoat-dong",
+            name: "Hoạt động", href: "/Active",
             subMenu: [
                 { name: "Hoạt động ngoại khóa", href: "/Active/activenk" },
                 { name: "Hoạt động học thuật", href: "/Active/activeht" },
