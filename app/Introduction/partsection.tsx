@@ -195,7 +195,7 @@ const StudentJourneyMirror = () => {
 
                         {/* THẺ 6: ẢNH KỶ NIỆM 3 */}
                         <motion.div variants={fadeInUp} className="md:col-span-4 bg-gray-200 rounded-[35px] overflow-hidden border border-white/20 group">
-                            <img src="Picture/khenthuong/anhnckh.jpg" alt="Teamwork" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <img src="picture/khenthuong/anhnckh.jpg" alt="Teamwork" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                         </motion.div>
 
                     </div>
