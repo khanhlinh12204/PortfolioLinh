@@ -19,10 +19,10 @@ export default function Header() {
             href: "/Introduction",
         },
         {
-            name: "Kỹ Năng", href: "#ky-nang",
+            name: "Kỹ Năng", href: "/ItemSection",
             subMenu: [
-                { name: "Kỹ năng chuyên môn", href: "/ItemSection" },
-                { name: "kỹ năng mềm", href: "#branding" },
+                { name: "Kỹ năng chuyên môn", href: "/ItemSection/skillcmSection" },
+                { name: "kỹ năng mềm", href: "/ItemSection/skillmSection" },
             ]
         },
         {
