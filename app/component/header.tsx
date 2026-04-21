@@ -37,7 +37,7 @@ export default function Header() {
             ]
         },
         { name: "Blog", href: "#blog" },
-        { name: "Liên hệ", href: "#lien-he" },
+        { name: "Liên hệ", href: "/Contact" },
     ];
 
     return (

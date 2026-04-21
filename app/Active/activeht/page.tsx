@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { 
-  Users, 
-  Terminal, 
-  Award, 
+import {
+  Users,
+  Terminal,
+  Award,
   ChevronRight,
   Code2,
   Cpu,
@@ -19,7 +19,7 @@ const academicData = [
   {
     title: "Seminar & Workshop",
     icon: <Users className="w-6 h-6" />,
-    color: "from-[#d85165]/10 to-[#d85165]/5", 
+    color: "from-[#d85165]/10 to-[#d85165]/5",
     textColor: "text-[#d85165]",
     description: "Tích cực tham gia và đồng tổ chức các buổi seminar, workshop học thuật nhằm chia sẻ kiến thức trong cộng đồng sinh viên.",
     images: ["/picture/hoatdong/HD1 (28).jpg", "/picture/hoatdong/HD1 (72).jpg", "/picture/khenthuong/l1.jpg", "/picture/khenthuong/anhpk1.jpg"],
@@ -33,7 +33,7 @@ const academicData = [
   {
     title: "CLB & Hỗ trợ học tập",
     icon: <Terminal className="w-6 h-6" />,
-    color: "from-[#d85165]/10 to-pink-50", 
+    color: "from-[#d85165]/10 to-pink-50",
     textColor: "text-[#d85165]",
     description: "Thành viên CLB Hỗ Trợ Lập Trình, đồng hành cùng sinh viên khóa dưới và tổ chức các hoạt động kỹ năng chuyên môn.",
     images: ["/picture/khenthuong/anhsp.jpg", "/picture/khenthuong/anhpk.jpg", "/picture/khenthuong/anhhd17.jpg", "/picture/khenthuong/anhhd.jpg"],
@@ -47,7 +47,7 @@ const academicData = [
   {
     title: "Trải nghiệm thực tế",
     icon: <Cpu className="w-6 h-6" />,
-    color: "from-[#d85165]/15 to-white/50", 
+    color: "from-[#d85165]/15 to-white/50",
     textColor: "text-[#d85165]",
     description: "Chủ động kết nối doanh nghiệp và tham gia các hội nghị khoa học để mở rộng góc nhìn thực tế.",
     images: ["/picture/hoatdong/HD1 (77).jpg", "/picture/khenthuong/anhsm.jpg", "/picture/hoatdong/rikkei (1).png", "/picture/hoatdong/fpt.png"],
@@ -62,7 +62,7 @@ const academicData = [
   {
     title: "Cuộc thi & Tổ chức",
     icon: <Award className="w-6 h-6" />,
-    color: "from-[#d85165]/20 to-[#d85165]/10", 
+    color: "from-[#d85165]/20 to-[#d85165]/10",
     textColor: "text-[#d85165]",
     description: "Thử thách bản thân qua các kỳ thi lập trình quốc tế và tham gia công tác tổ chức sự kiện quy mô Khoa.",
     images: ["/picture/hoatdong/HD1 (79).jpg", "/picture/khenthuong/anhicpc.jpg", "/picture/hoatdong/HD1 (81).jpg"],
@@ -74,9 +74,10 @@ const academicData = [
   }
 ];
 
+// --- Các sub-component giữ nguyên ---
 function ExpandableList({ items }: { items: any[] }) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const threshold = 4; 
+  const threshold = 4;
   const hasMore = items.length > threshold;
   const displayedItems = isExpanded ? items : items.slice(0, threshold);
 
@@ -84,7 +85,7 @@ function ExpandableList({ items }: { items: any[] }) {
     <div className="space-y-3 relative z-30">
       <AnimatePresence mode="popLayout">
         {displayedItems.map((item, i) => (
-          <motion.div 
+          <motion.div
             layout
             key={item.name + i}
             initial={{ opacity: 0, x: -10 }}
@@ -105,7 +106,7 @@ function ExpandableList({ items }: { items: any[] }) {
       </AnimatePresence>
 
       {hasMore && (
-        <button 
+        <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="w-full py-2 flex items-center justify-center gap-2 text-[#d85165] text-[10px] font-black uppercase tracking-widest hover:tracking-[0.2em] transition-all mt-2 group"
         >
@@ -135,28 +136,29 @@ function BigRotatingPetal({ config }: { config: any }) {
 
 export default function AcademicActivities() {
   const { scrollYProgress } = useScroll();
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
   return (
-    <section className="min-h-screen relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-[#fff9fa]">
-      {/* Nền Parallax - Giữ nguyên opacity */}
-      <motion.div 
-        style={{ 
-          backgroundImage: "url('/picture/anhcv/bg.jpg')",
-          y: backgroundY 
-        }}
-        className="absolute inset-0 bg-cover bg-center bg-fixed grayscale-[0.3]"
-      />
-      
-      <div className="absolute inset-0 backdrop-blur-[1px] z-0 pointer-events-none bg-gradient-to-b from-white/20 via-transparent to-white/20" />
+    <section className="relative py-20 px-4 md:px-12 bg-[#fffcfb] overflow-hidden"
+     style={{
+        backgroundImage: "url('/picture/anhcv/background.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat'
+      }}>
 
-      {/* Hoa đào rơi */}
-      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+
+      {/* 2. LỚP PHỦ OVERLAY ĐỒNG NHẤT: Bỏ hoàn toàn Gradient to-b gây vệt trắng */}
+      <div className="absolute inset-0 bg-[#fff9fa]/20 backdrop-blur-[2px] z-[1] pointer-events-none" />
+
+      {/* 3. HIỆU ỨNG CÁNH HOA RƠI */}
+      <div className="absolute inset-0 pointer-events-none z-[2] overflow-hidden">
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
             animate={{
-              y: [-100, 1200],
+              y: [-100, 1500],
               x: [0, Math.sin(i) * 100],
               rotate: [0, 360 * (i % 2 === 0 ? 1 : -1)]
             }}
@@ -174,10 +176,11 @@ export default function AcademicActivities() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-20">
-        
-        {/* Header Section - Giữ kích thước chữ cũ nhưng đổi màu gradient bắt mắt */}
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Header Section */}
         <div className="relative mb-20 flex flex-col items-start justify-start text-left">
+          {/* Watermark "GROWTH" */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full select-none pointer-events-none opacity-[0.08] overflow-hidden z-0">
             <span className="text-[80px] md:text-[150px] font-black whitespace-nowrap uppercase tracking-tighter text-[#4a3728] block -ml-2">
               GROWTH
@@ -189,7 +192,7 @@ export default function AcademicActivities() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
-            className="relative z-10 inline-flex items-center gap-2 px-6 py-2 mb-6 rounded-full border-2 border-[#f2cbd4] bg-white/80 backdrop-blur-md shadow-lg transition-all hover:ring-4 hover:ring-[#f2cbd4]/40 cursor-default"
+            className="relative z-10 inline-flex items-center gap-2 px-6 py-2 mb-6 rounded-full border-2 border-[#f2cbd4] bg-white/80 backdrop-blur-md shadow-lg transition-all"
           >
             <Sparkles className="text-[#b53d54]" size={16} />
             <span className="text-[#b53d54] font-bold text-[10px] uppercase tracking-[0.2em]">
@@ -197,10 +200,10 @@ export default function AcademicActivities() {
             </span>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ once: true }} 
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="relative z-10"
           >
             <h2 className="text-4xl md:text-6xl font-black text-[#5c4033] tracking-tighter leading-tight drop-shadow-sm">
@@ -210,17 +213,17 @@ export default function AcademicActivities() {
               </span>
             </h2>
             <div className="mt-6 h-1.5 w-32 bg-[#d85165] rounded-full overflow-hidden">
-               <motion.div 
-                 initial={{ x: "-100%" }}
-                 whileInView={{ x: "100%" }}
-                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                 className="w-full h-full bg-white/50"
-               />
+              <motion.div
+                initial={{ x: "-100%" }}
+                whileInView={{ x: "100%" }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-full h-full bg-white/50"
+              />
             </div>
           </motion.div>
         </div>
 
-        {/* Grid Cards - Giữ nguyên kích thước card và padding cũ */}
+        {/* Grid Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch relative z-10">
           {academicData.map((section, idx) => (
             <motion.div
@@ -229,24 +232,24 @@ export default function AcademicActivities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: idx * 0.15 }}
-              whileHover={{ y: -10 }} // Giảm độ nảy để thanh thoát hơn
+              whileHover={{ y: -10 }}
               className="group relative bg-white/30 backdrop-blur-2xl border border-white/60 rounded-[3.5rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_80px_rgba(216,81,101,0.12)] transition-all duration-700 flex flex-col min-h-[780px] overflow-hidden"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-[#d85165]/0 via-[#d85165]/5 to-[#d85165]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-2xl z-0" />
-              
+
               <BigRotatingPetal config={section.petalConfig} />
 
-              {/* Photo Stack - Giữ nguyên h-64 như cũ */}
+              {/* Photo Stack */}
               <div className="relative h-64 mb-14 flex items-center justify-center flex-shrink-0 z-30">
                 {section.images.map((img, imgIdx) => (
                   <motion.div
                     key={imgIdx}
                     initial={{ opacity: 0, scale: 0.8, rotate: imgIdx % 2 === 0 ? -10 : 10 }}
-                    whileInView={{ 
-                      opacity: 1, 
-                      scale: 1, 
+                    whileInView={{
+                      opacity: 1,
+                      scale: 1,
                       rotate: imgIdx % 2 === 0 ? -4 : 4,
-                      x: imgIdx * 15 
+                      x: imgIdx * 15
                     }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 + (imgIdx * 0.15), type: "spring", stiffness: 50 }}
@@ -257,9 +260,8 @@ export default function AcademicActivities() {
                     <img src={img} alt="" className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
                   </motion.div>
                 ))}
-                
-                {/* Floating Badge - Nhấn mạnh hơn với Icon Star */}
-                <motion.div 
+
+                <motion.div
                   whileHover={{ scale: 1.1 }}
                   className="absolute -bottom-6 -right-2 z-[110] bg-[#422f27] text-white text-[9px] font-black px-5 py-3 rounded-2xl flex items-center gap-2 shadow-2xl border border-white/20 group-hover:bg-[#d85165] transition-colors duration-300"
                 >
@@ -270,15 +272,15 @@ export default function AcademicActivities() {
 
               {/* Icon & Label */}
               <div className="flex items-end justify-between mb-8 flex-shrink-0 relative z-30">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.1, rotate: 15 }}
                   className={`p-5 rounded-[2rem] bg-gradient-to-br ${section.color} ${section.textColor} shadow-[inset_0_2px_10px_rgba(255,255,255,0.5)] border border-white/50`}
                 >
                   {section.icon}
                 </motion.div>
                 <div className="flex flex-col items-end">
-                   <span className="text-[11px] font-black text-[#d85165] uppercase tracking-[0.3em] opacity-40 mb-1">SECTION</span>
-                   <span className="text-3xl font-black text-[#d85165]/10">0{idx + 1}</span>
+                  <span className="text-[11px] font-black text-[#d85165] uppercase tracking-[0.3em] opacity-40 mb-1">SECTION</span>
+                  <span className="text-3xl font-black text-[#d85165]/10">0{idx + 1}</span>
                 </div>
               </div>
 
@@ -293,7 +295,7 @@ export default function AcademicActivities() {
                 <ExpandableList items={section.items} />
               </div>
 
-              {/* Trang trí Watermark Code2 - Giữ nguyên */}
+              {/* Trang trí Watermark Code2 */}
               <div className="absolute -bottom-4 -right-4 opacity-[0.04] group-hover:opacity-[0.12] group-hover:-translate-x-4 group-hover:-translate-y-4 transition-all duration-1000 pointer-events-none text-[#d85165] z-10">
                 <Code2 size={200} />
               </div>
@@ -302,7 +304,6 @@ export default function AcademicActivities() {
         </div>
       </div>
 
-      {/* Animation cho gradient tiêu đề */}
       <style jsx global>{`
         @keyframes gradient {
           0% { background-position: 0% 50%; }
