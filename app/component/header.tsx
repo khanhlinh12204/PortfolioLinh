@@ -26,9 +26,16 @@ export default function Header() {
             ]
         },
         {
-            name: "Dự Án",href: "/ProjectSection",
+            name: "Dự Án", href: "/ProjectSection",
         },
-        { name: "Hoạt động", href: "#hoat-dong" },
+        {
+            name: "Hoạt động", href: "#hoat-dong",
+            subMenu: [
+                { name: "Hoạt động ngoại khóa", href: "/Active/activenk" },
+                { name: "Hoạt động học thuật", href: "/Active/activeht" },
+                { name: "Thành tích", href: "/Active/achievett" },
+            ]
+        },
         { name: "Blog", href: "#blog" },
         { name: "Liên hệ", href: "#lien-he" },
     ];

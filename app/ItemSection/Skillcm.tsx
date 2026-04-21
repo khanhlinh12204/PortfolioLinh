@@ -108,15 +108,6 @@ export default function SkillSection() {
       <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
       {/* 📸 PHẦN CHỈNH SỬA: BACKGROUND NỀN TOÀN TRANG */}
       <div className="absolute inset-0 z-[-1]" >
-        {/* <Image
-          src="/Picture/anhcv/bg.jpg"
-          alt="Background Image"
-          fill
-          priority
-          quality={100}
-          className="object-cover grayscale-[40%]"
-        /> */}
-        {/* Lớp phủ Glassmorphism để hiện nền ảnh */}
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
       </div >
 

@@ -47,7 +47,7 @@ export default function Intro() {
             {/* --- 1. LỚP NỀN DECOR & GRADIENT --- */}
             <div className="absolute inset-0 z-0 opacity-20">
                 <Image
-                    src="/P=picture/anhcv/bg.jpg"
+                    src="/picture/anhcv/bg.jpg"
                     alt="Background"
                     fill
                     className="object-cover blur-[2px]"
