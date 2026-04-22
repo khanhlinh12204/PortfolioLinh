@@ -6,6 +6,7 @@ import {
     Sparkles, ArrowRight, Code, Microscope, Terminal, Quote
 } from 'lucide-react';
 import { Variants } from "framer-motion";
+import Link from 'next/link';
 
 const StudentJourneyMirror = () => {
     // Animation variants cho các phần tử con
@@ -143,9 +144,11 @@ const StudentJourneyMirror = () => {
                             <p className="text-[12px] leading-relaxed opacity-90 mb-6 font-light">
                                 Kết hợp cùng với 2 thành viên thiết kế Website cho CLB “Hỗ trợ lập trình” với giao diện hiện đại và tối ưu trải nghiệm.
                             </p>
-                            <button className="mt-auto w-full py-3 bg-white/10 hover:bg-white text-white hover:text-[#b53d54] border border-white/30 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-300">
-                                Tham Gia Cuộc Thi Front-End
-                            </button>
+                            <Link href="https://bach-thi-thien-thanh.github.io/BanhTrang/">
+                                <button className="mt-auto w-full py-3 bg-white/10 hover:bg-white text-white hover:text-[#b53d54] border border-white/30 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-300">
+                                    Tham Gia Cuộc Thi Front-End
+                                </button>
+                            </Link>
                         </motion.div>
 
                         {/* THẺ 2: ẢNH KỶ NIỆM 1 */}

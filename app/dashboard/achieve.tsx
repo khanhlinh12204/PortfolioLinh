@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
+import Link from 'next/link';
 
 const AwardsSection = () => {
     const awards = [
@@ -182,12 +183,16 @@ const AwardsSection = () => {
 
                 {/* 5. BUTTONS */}
                 <div className="mt-12 flex justify-center gap-6">
-                    <button className="px-10 py-3 bg-white/40 backdrop-blur-md text-[#4a3728] border border-white/40 rounded-full font-bold shadow-md hover:bg-white/80 transition-all">
-                        📜 Xem toàn bộ hồ sơ
-                    </button>
-                    <button className="px-10 py-3 bg-[#d85165] text-white rounded-full font-bold shadow-lg hover:shadow-[#d85165]/40 transition-all transform hover:-translate-y-1">
-                        Kết nối cùng Khánh Linh
-                    </button>
+                    <Link href="/Active/achievett">
+                        <button className="px-10 py-3 bg-white/40 backdrop-blur-md text-[#4a3728] border border-white/40 rounded-full font-bold shadow-md hover:bg-white/80 transition-all">
+                            📜 Xem toàn bộ hồ sơ
+                        </button>
+                    </Link>
+                    <Link href="/Contact">
+                        <button className="px-10 py-3 bg-[#d85165] text-white rounded-full font-bold shadow-lg hover:shadow-[#d85165]/40 transition-all transform hover:-translate-y-1">
+                            Kết nối cùng Khánh Linh
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

@@ -95,14 +95,14 @@ const Footer = () => {
 
                         <nav className="flex flex-col gap-3">
                             {[
-                                { name: "Trang chủ", icon: "🏠" },
-                                { name: "Giới thiệu", icon: "🌸" },
-                                { name: "Dự án", icon: "💻" },
-                                { name: "Liên hệ", icon: "💌" },
+                                { name: "Trang chủ", icon: "🏠", path: "/dashboard" },
+                                { name: "Giới thiệu", icon: "🌸", path: "/Introduction" },
+                                { name: "Dự án", icon: "💻", path: "/ProjectSection" },
+                                { name: "Liên hệ", icon: "💌", path: "Contact" },
                             ].map((item) => (
                                 <Link
                                     key={item.name}
-                                    href="#"
+                                    href={item.path} // <-- Thay đổi ở đây
                                     className="group flex items-center gap-3 px-4 py-2 rounded-xl bg-white/50 hover:bg-white transition"
                                 >
                                     <span>{item.icon}</span>

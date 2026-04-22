@@ -10,7 +10,6 @@ const INFO_STATS = [
     { label: "Chuyên ngành", value: "Khoa học máy tính" },
     { label: "Học vấn", value: "ĐH Khoa học Huế" },
     { label: "Thành tích", value: "GPA 3.64 / 4.0" },
-    { label: "Mục tiêu", value: "Frontend Developer" },
 ];
 
 // CHỈ THAY ĐỔI MẢNG NÀY ĐỂ ẢNH TO VÀ AN TOÀN
@@ -184,13 +183,13 @@ export default function AboutPage() {
                             variants={itemVariants}
                             className="p-10 rounded-[50px] bg-[#4a3728] text-white shadow-2xl"
                         >
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {INFO_STATS.map((item, i) => (
                                     <motion.div key={i} whileHover={{ y: -2 }}>
                                         <p className="text-[15px] uppercase tracking-[0.2em] text-[#d85165] font-black">
                                             {item.label}
                                         </p>
-                                        <p className="text-white/90 font-bold text-[14px] lg:text-[11px] truncate">
+                                        <p className="text-white/90 font-bold text-[16px] lg:text-[18px] truncate">
                                             {item.value}
                                         </p>
                                     </motion.div>
@@ -211,6 +210,7 @@ export default function AboutPage() {
                                 whileTap={{ scale: 0.95 }}
                                 className="group relative px-8 py-4 bg-[#d85165] text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] shadow-lg overflow-hidden transition-all"
                             >
+                                
                                 <span className="relative z-10 flex items-center gap-2">
                                     Kết nối với mình{" "}
                                     <ArrowRight
@@ -218,6 +218,7 @@ export default function AboutPage() {
                                         className="group-hover:translate-x-1 transition-transform"
                                     />
                                 </span>
+                                
 
                                 <motion.div
                                     animate={{ x: ["-100%", "200%"] }}
@@ -230,8 +231,8 @@ export default function AboutPage() {
                                 />
                             </motion.button>
 
-                            <Link
-                                href="#journey"
+                            <Link 
+                                href="#hanh-trinh"
                                 className="group flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#d85165]"
                             >
                                 <span className="border-b-2 border-[#d85165] pb-1 transition-opacity group-hover:opacity-70">

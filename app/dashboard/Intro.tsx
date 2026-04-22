@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Intro() {
     const personalStories = [
@@ -216,9 +217,11 @@ export default function Intro() {
                                 Linh yêu: Biển xanh & Núi cao
                             </span>
                         </div>
+                        <Link href="/Introduction">
                         <div className="px-5 text-white text-xs font-bold group-hover:translate-x-1 transition-transform">
                             Khám phá →
                         </div>
+                        </Link>
                     </motion.div>
                 </div>
             </div>

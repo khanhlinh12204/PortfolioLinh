@@ -82,8 +82,8 @@ export default function JourneyStorySection() {
     };
 
     return (
-        <section
-            className="relative w-full py-20 overflow-hidden min-h-screen bg-fixed bg-cover bg-center"
+        <section id="hanh-trinh"
+            className="relative w-full py-20 overflow-hidden min-h-screen bg-fixed bg-cover bg-center "
             style={{ backgroundImage: "url('/picture/anhcv/background.jpg')" }}
         >
             <div className="absolute inset-0 pointer-events-none z-10">

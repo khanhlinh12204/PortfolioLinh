@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Heart, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 const DATA = [
     {
@@ -208,10 +209,11 @@ const JourneySection = () => {
                                             <Star className="text-[#d85165] fill-[#d85165] w-6 h-6" />
                                         </motion.div>
                                     </div>
-
-                                    <motion.button whileHover={{ scale: 1.05 }} className="px-10 py-4 bg-[#d85165] text-white rounded-full font-bold shadow-lg flex items-center gap-2">
-                                        Kết nối cùng Khánh Linh <Sparkles size={16} />
-                                    </motion.button>
+                                    <Link href="/Active">
+                                        <motion.button whileHover={{ scale: 1.05 }} className="px-10 py-4 bg-[#d85165] text-white rounded-full font-bold shadow-lg flex items-center gap-2">
+                                            Xem các hoạt động khác  <Sparkles size={16} />
+                                        </motion.button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>

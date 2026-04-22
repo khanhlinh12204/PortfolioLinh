@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Send, Sparkles, Star } from 'lucide-react';
+import { Heart, Send, Sparkles, Star, X } from 'lucide-react';
 
 const PETALS_COUNT = 15;
 type Petal = {
@@ -19,9 +19,18 @@ type PetalCustom = {
     delay: number;
     duration: number;
 };
+
 const ContactAndFooter = () => {
     const [isMounted, setIsMounted] = useState(false);
     const [petals, setPetals] = useState<Petal[]>([]);
+
+    // --- PHẦN MỚI: State quản lý Form và Pop-up ---
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        msg: ""
+    });
 
     useEffect(() => {
         setIsMounted(true);
@@ -35,6 +44,21 @@ const ContactAndFooter = () => {
         }));
         setPetals(generatedPetals);
     }, []);
+
+    // --- PHẦN MỚI: Hàm xử lý khi nhấn nút ---
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!formData.name.trim()) {
+            alert("Bạn ơi, cho mình biết tên của bạn trước nhé! ✨");
+            return;
+        }
+        setShowSuccess(true); // Mở pop-up thông báo
+    };
+
+    const closePopup = () => {
+        setShowSuccess(false);
+        setFormData({ name: "", email: "", msg: "" }); // Reset form sau khi gửi
+    };
 
     const petalVariants = {
         hidden: { y: '-10vh', opacity: 0 },
@@ -61,7 +85,7 @@ const ContactAndFooter = () => {
     return (
         <section className="relative w-full pt-32 pb-10 bg-[#fcfaf7] overflow-hidden min-h-screen flex flex-col justify-center">
 
-            {/* 1. BACKGROUND ĐÃ ĐƯỢC THU NHỎ (FIXED) */}
+            {/* 1. BACKGROUND */}
             <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
                 <Image
                     src="/picture/anhcv/background.jpg"
@@ -73,7 +97,7 @@ const ContactAndFooter = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-[#fcfaf7] via-transparent to-[#fcfaf7]"></div>
             </div>
 
-            {/* 2. LAYER HIỆU ỨNG CÁNH HOA RƠI (MỚI THÊM) */}
+            {/* 2. LAYER HIỆU ỨNG CÁNH HOA RƠI */}
             <div className="absolute inset-0 pointer-events-none z-10">
                 {[...Array(15)].map((_, i) => (
                     <motion.div
@@ -166,7 +190,6 @@ const ContactAndFooter = () => {
                             className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                         />
 
-                        {/* Overlay Gradient và Chữ */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#4a3728]/90 via-[#4a3728]/20 to-transparent" />
                         <div className="absolute bottom-10 left-0 right-0 px-10">
                             <motion.div
@@ -185,6 +208,7 @@ const ContactAndFooter = () => {
                             </motion.div>
                         </div>
                     </motion.div>
+
                     {/* FORM BOX */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
@@ -206,7 +230,7 @@ const ContactAndFooter = () => {
                             <Send className="w-6 h-6 text-[#d85165] opacity-40" />
                         </div>
 
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="space-y-4">
                                 {[
                                     { key: "name", type: "text", label: "Họ và tên", placeholder: "Tên của bạn..." },
@@ -219,13 +243,19 @@ const ContactAndFooter = () => {
                                         </label>
                                         {input.type === 'textarea' ? (
                                             <textarea
+                                                required
                                                 rows={3}
+                                                value={formData.msg}
+                                                onChange={(e) => setFormData({ ...formData, msg: e.target.value })}
                                                 placeholder={input.placeholder}
                                                 className="w-full px-6 py-4 rounded-2xl outline-none transition-all text-[#4a3728] font-bold placeholder:text-[#4a3728]/20 resize-none shadow-inner bg-white/40 focus:bg-white/80 border border-transparent focus:border-[#d85165]/20"
                                             />
                                         ) : (
                                             <input
+                                                required={input.key === "name"}
                                                 type={input.type}
+                                                value={input.key === "name" ? formData.name : formData.email}
+                                                onChange={(e) => setFormData({ ...formData, [input.key]: e.target.value })}
                                                 placeholder={input.placeholder}
                                                 className="w-full px-6 py-4 rounded-2xl outline-none transition-all text-[#4a3728] font-bold placeholder:text-[#4a3728]/20 shadow-inner bg-white/40 focus:bg-white/80 border border-transparent focus:border-[#d85165]/20"
                                             />
@@ -236,6 +266,7 @@ const ContactAndFooter = () => {
                             </div>
 
                             <motion.button
+                                type="submit"
                                 whileHover={{
                                     y: -5,
                                     boxShadow: "0 20px 40px -10px rgba(216,81,101,0.5)"
@@ -253,9 +284,62 @@ const ContactAndFooter = () => {
                         </form>
                     </motion.div>
                 </div>
-
-
             </div>
+
+            {/* --- PHẦN MỚI: POP-UP THÔNG BÁO XINH XẮN --- */}
+        <AnimatePresence>
+                {showSuccess && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+                        {/* Backdrop */}
+                        <motion.div 
+                            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                            onClick={closePopup}
+                            className="absolute inset-0 bg-[#4a3728]/40 backdrop-blur-sm" 
+                        />
+                        
+                        {/* Nội dung Pop-up */}
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                            className="relative w-full max-w-sm bg-white rounded-[40px] p-8 text-center shadow-2xl border-4 border-[#fce7eb]"
+                        >
+                            <button onClick={closePopup} className="absolute top-4 right-4 text-[#4a3728]/30 hover:text-[#d85165] transition-colors">
+                                <X size={24} />
+                            </button>
+
+                            <div className="mb-6 flex justify-center">
+                                <div className="relative">
+                                    <motion.div 
+                                        animate={{ scale: [1, 1.2, 1] }} 
+                                        transition={{ repeat: Infinity, duration: 1.5 }}
+                                        className="w-20 h-20 bg-[#fce7eb] rounded-full flex items-center justify-center text-[#d85165]"
+                                    >
+                                        <Heart size={40} fill="currentColor" />
+                                    </motion.div>
+                                    <Sparkles className="absolute -top-2 -right-2 text-yellow-400" />
+                                </div>
+                            </div>
+
+                            <h3 className="text-2xl font-black text-[#4a3728] mb-2">Chào {formData.name} nhé!</h3>
+                            <p className="text-[#6f5643] leading-relaxed mb-8">
+                                Cảm ơn bạn đã gửi lời nhắn cho Linh. Mình đã nhận được thông tin và sẽ phản hồi bạn thật sớm qua 
+                                <span className="text-[#d85165] font-bold"> {formData.email || "tin nhắn"}</span>. 
+                                Chúc bạn một ngày ngập nắng! 🌸
+                            </p>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={closePopup}
+                                className="w-full py-4 bg-[#4a3728] text-white rounded-2xl font-bold tracking-wide shadow-lg"
+                            >
+                                Đóng lại nè
+                            </motion.button>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
