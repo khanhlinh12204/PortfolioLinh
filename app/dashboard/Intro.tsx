@@ -109,7 +109,7 @@ export default function Intro() {
                             className="relative w-full h-full overflow-hidden border-4 border-white shadow-2xl z-10 "
                         >
                             <Image
-                                src="/picture/anhcv/anhgt.jpg"
+                                src="/picture/anhcv/anhgt2.jpg"
                                 alt="Khánh Linh"
                                 fill
                                 className="object-cover scale-110 group-hover:scale-105 transition-transform duration-700"
@@ -218,9 +218,9 @@ export default function Intro() {
                             </span>
                         </div>
                         <Link href="/Introduction">
-                        <div className="px-5 text-white text-xs font-bold group-hover:translate-x-1 transition-transform">
-                            Khám phá →
-                        </div>
+                            <div className="px-5 text-white text-xs font-bold group-hover:translate-x-1 transition-transform">
+                                Khám phá →
+                            </div>
                         </Link>
                     </motion.div>
                 </div>

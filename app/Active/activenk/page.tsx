@@ -16,7 +16,7 @@ const PaperPlaneIcon = () => (
 
 function WavyPlaneEffect() {
     return (
-        <div className="absolute inset-0 z-20 pointer-events-none overflow-visible">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-visible">
             <motion.div
                 className="absolute w-12 h-12"
                 style={{ top: "100px" }}
@@ -50,13 +50,13 @@ function WavyPlaneEffect() {
     );
 }
 
-function AutoChangingImage({ imageList, index, isRow2 = false }: { imageList: string[], index: number, isRow2?: boolean }) {
+function AutoChangingImage({ imageList, index, isRow2 = false, entranceDelay = 0 }: { imageList: string[], index: number, isRow2?: boolean, entranceDelay?: number }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % imageList.length);
-        }, 4000 + (index * 400));
+        }, 6500 + (index * 500));
         return () => clearInterval(interval);
     }, [imageList, index]);
 
@@ -74,7 +74,7 @@ function AutoChangingImage({ imageList, index, isRow2 = false }: { imageList: st
                 scale: 1,
                 filter: "blur(0px)"
             }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: entranceDelay, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.2 }}
             whileHover={{ scale: 1.05 }}
             className={`relative overflow-hidden rounded-[2.5rem] bg-white border-2 border-dashed border-[#d85165]/40 group z-0 ${
@@ -93,7 +93,7 @@ function AutoChangingImage({ imageList, index, isRow2 = false }: { imageList: st
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1.4, ease: "easeInOut" }}
                         className="absolute inset-0"
                     >
                         <Image
@@ -123,6 +123,12 @@ const sections = [
             "Chào đón Tân Sinh viên K49 nồng nhiệt",
             "Kỷ niệm 30 năm thành lập Khoa CNTT"
         ],
+        notes: [
+            "Một lần tự tin tỏa sáng dưới ánh đèn sân khấu.",
+            "Góp thêm sắc màu cho ngày hội của khoa.",
+            "Cùng tạo nên khởi đầu thật đáng nhớ cho K49.",
+            "Lưu giữ niềm vui trong dịp đặc biệt của khoa."
+        ],
         row1Pools: [
             ["/picture/hoatdong/HD1 (38).jpg", "/picture/hoatdong/HD1 (5).jpg"],
             ["/picture/hoatdong/HD1 (2).jpg", "/picture/hoatdong/HD1 (95).jpg"],
@@ -143,10 +149,20 @@ const sections = [
         intro: "Bên cạnh đó, mình luôn mong muốn đóng góp cho cộng đồng thông qua những hoạt động ý nghĩa và nhân văn.",
         outro: "Những hoạt động này giúp mình hiểu rõ hơn về giá trị của sự sẻ chia, trách nhiệm và tinh thần cộng đồng.",
         desc: [
-            "Hiến tóc cho bệnh nhận ung thư (09/2024)",
+            "Hiến tóc cho bệnh nhân ung thư (09/2024)",
             "Hành trình “Uống nước nhớ nguồn” ý nghĩa",
             "Tưởng niệm các Anh hùng Liệt sĩ 27/7",
-            "Hỗ trợ nhiệt tình Tân SV K47 nhập học"
+            "Hỗ trợ nhiệt tình Tân SV K47 nhập học",
+            "Tham gia hiến máu tình nguyện",
+            "Tình nguyện hỗ trợ cộng đồng trong mùa dịch COVID-19"
+        ],
+        notes: [
+            "Trao đi yêu thương bằng một hành động nhỏ.",
+            "Trân trọng những giá trị và nghĩa tình xưa.",
+            "Một phút lắng lòng để bày tỏ niềm tri ân.",
+            "Gửi lời chào thân thiện đến các bạn tân sinh viên.",
+            "Góp một phần nhỏ để sẻ chia và tiếp thêm hy vọng.",
+            "Chung tay giúp đỡ mọi người trong giai đoạn khó khăn."
         ],
         row1Pools: [
             ["/picture/hoatdong/HD1 (23).jpg", "/picture/khenthuong/anhhd8.jpg"],
@@ -165,13 +181,19 @@ const sections = [
         title: "🌱 Đóng góp & tinh thần sinh viên",
         color: "from-[#a1c4fd] to-[#c2e9fb]",
         bgImage: "/picture/anhcv/bg.jpg",
-        intro: "Trong môi trường học tập và sinh hoạt, mình luôn chủ động đóng góp và hỗ trợ những người xung quanh để cùng nhau phát triển.",
-        outro: "Từng bước nhỏ đóng góp đều giúp môi trường tập thể thêm vững mạnh.",
+        intro: "Mình tích cực góp sức cho hoạt động của CLB và Khoa, từ kết nối thành viên đến hỗ trợ các chương trình học thuật.",
+        outro: "Mỗi hoạt động là một cơ hội để sẻ chia trách nhiệm, kết nối mọi người và góp phần tạo nên tập thể gắn bó.",
         desc: [
-            "CLB Hỗ trợ lập trình: Đồng hành cùng K47, K48",
-            "Chủ động hỗ trợ bạn bè vượt qua khó khăn",
-            "Đóng góp sôi nổi cho phong trào khoa & CLB",
-            "Rèn luyện bản lĩnh qua các kỳ trại kỹ năng"
+            "Tổ chức trại team building cho các thành viên CLB",
+            "Tình nguyện viên hỗ trợ các cuộc thi của Khoa",
+            "Đồng hành cùng thành viên CLB Hỗ trợ Lập trình",
+            "Chung tay tổ chức hoạt động và phong trào của Khoa"
+        ],
+        notes: [
+            "Tạo không gian giao lưu, gắn kết và cùng nhau trải nghiệm.",
+            "Góp sức để các cuộc thi diễn ra chỉn chu, thuận lợi.",
+            "Kết nối, chia sẻ và hỗ trợ các thành viên trong CLB.",
+            "Cùng xây dựng môi trường sinh viên năng động."
         ],
         row1Pools: [
             ["/picture/khenthuong/anhsp.jpg", "/picture/khenthuong/l9.jpg"],
@@ -189,6 +211,8 @@ const sections = [
 ];
 
 export default function BeyondSection() {
+    const [expandedSections, setExpandedSections] = useState<number[]>([]);
+
     return (
         <section className="w-full flex flex-col">
             {sections.map((sec, index) => (
@@ -261,50 +285,175 @@ export default function BeyondSection() {
 
                         {/* Chi tiết nội dung section */}
                         <div className="space-y-16">
-                            <div className={`max-w-5xl flex flex-col ${index % 2 !== 0 ? "ml-auto text-right items-end" : "mr-auto text-left items-start"}`}>
-                                <motion.div
-                                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    className={`inline-block px-8 py-3 rounded-tr-[2rem] rounded-bl-[2rem] bg-gradient-to-r ${sec.color} shadow-[5px_5px_0px_#4a3728] mb-8 text-[#4a3728] font-black text-2xl md:text-4xl`}
-                                >
-                                    {sec.title}
-                                </motion.div>
+                            <div className="relative mx-auto max-w-6xl">
+                                <div className={`pointer-events-none absolute -top-5 h-px w-2/3 bg-gradient-to-r ${sec.color} opacity-80 ${index % 2 === 0 ? "left-0" : "right-0 rotate-180"}`} />
 
-                                <motion.p 
-                                    className={`text-[#6f5643] text-lg md:text-xl font-medium leading-relaxed mb-8 border-[#d85165] pl-6 ${index % 2 !== 0 ? "border-r-4 border-l-0 pr-6 text-right" : "border-l-4"}`}
-                                >
-                                    {sec.intro}
-                                </motion.p>
+                                <div className="grid items-start gap-8 md:grid-cols-12 md:gap-12">
+                                    <motion.div
+                                        initial={{ opacity: 0, x: index % 2 === 0 ? -24 : 24 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        className={`activity-intro relative isolate overflow-hidden rounded-[2rem] border border-white/80 bg-gradient-to-br from-white/85 via-white/65 to-white/40 p-6 shadow-[0_20px_55px_rgba(74,55,40,0.12)] backdrop-blur-xl sm:rounded-[2.25rem] sm:p-8 md:col-span-5 ${index % 2 !== 0 ? "md:order-2" : ""}`}
+                                    >
+                                        <span className={`pointer-events-none absolute -right-2 -top-8 -z-10 select-none text-[150px] font-black leading-none tracking-tighter text-[#4a3728]/[0.035] sm:text-[190px] ${index % 2 !== 0 ? "-left-3 right-auto" : ""}`}>
+                                            0{index + 1}
+                                        </span>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 text-[16px] w-full">
-                                    {sec.desc.map((item, i) => (
-                                        <div key={i} className={`p-4 rounded-2xl bg-white shadow-sm border border-[#d85165]/5 flex items-center gap-4 ${index % 2 !== 0 ? "flex-row-reverse" : ""}`}>
-                                            <span className={`w-3 h-3 rounded-full bg-gradient-to-br ${sec.color}`} />
-                                            <span className="font-bold text-[#4a3728]">{item}</span>
+                                        <span className={`mb-5 inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${sec.color} px-3.5 py-2 text-[9px] font-black uppercase tracking-[0.18em] text-[#4a3728] shadow-[0_5px_16px_rgba(74,55,40,0.1)] sm:text-[10px]`}>
+                                            <span className="h-1.5 w-1.5 rounded-full bg-white/90 shadow-sm" />
+                                            Hoạt động tiêu biểu
+                                            <span className="opacity-60">·</span>
+                                            0{index + 1}
+                                        </span>
+
+                                        <h3 className="max-w-lg text-3xl font-black leading-[1.08] tracking-tight text-[#4a3728] sm:text-4xl lg:text-[2.75rem]">
+                                            {sec.title}
+                                        </h3>
+
+                                        <div className={`my-5 h-1 w-20 rounded-full bg-gradient-to-r ${sec.color} shadow-sm`} />
+
+                                        <p className="relative max-w-xl text-[15px] font-medium leading-7 text-[#5f4939] sm:text-base sm:leading-8">
+                                            {sec.intro}
+                                        </p>
+
+                                        <div className="mt-7 rounded-2xl border border-white/80 bg-white/65 p-4 shadow-sm sm:mt-8 sm:p-5">
+                                            <div className="mb-2 flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.17em] text-[#9b7563]">
+                                                <span className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${sec.color}`} />
+                                                Điều mình trân trọng
+                                            </div>
+                                            <p className="text-[13px] font-semibold italic leading-6 text-[#765b48] sm:text-sm">
+                                                “{sec.outro}”
+                                            </p>
                                         </div>
-                                    ))}
-                                </div>
+                                    </motion.div>
 
-                                <p className="text-[#8b6d4d] italic font-semibold text-lg bg-[#d85165]/5 inline-block px-4 py-2 rounded-xl">
-                                    ✨ {sec.outro}
-                                </p>
+                                    <div className={`activity-list relative md:col-span-7 ${index % 2 !== 0 ? "md:order-1" : ""}`}>
+                                        <div className={`relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-gradient-to-br from-white/55 via-white/35 to-white/20 p-4 shadow-[0_18px_48px_rgba(74,55,40,0.08)] backdrop-blur-md sm:rounded-[2rem] sm:p-6`}>
+                                            <div className="mb-5 flex items-center justify-between gap-4 border-b border-[#4a3728]/[0.08] pb-4 sm:mb-6">
+                                                <div className="flex items-center gap-3">
+                                                    <span className={`flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br ${sec.color} text-xs font-black text-[#4a3728] shadow-[0_7px_18px_rgba(74,55,40,0.14)]`}>
+                                                        0{index + 1}
+                                                    </span>
+                                                    <div>
+                                                        <span className="mb-0.5 block text-[9px] font-black uppercase tracking-[0.19em] text-[#9b7563]">
+                                                            Hành trình tham gia
+                                                        </span>
+                                                        <span className="text-base font-black tracking-tight text-[#4a3728] sm:text-lg">
+                                                            Những dấu ấn
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <span className="shrink-0 rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-[9px] font-black tracking-[0.12em] text-[#8b6d4d] shadow-sm">
+                                                    {String(sec.desc.length).padStart(2, "0")} HOẠT ĐỘNG
+                                                </span>
+                                            </div>
+
+                                            <div className={`relative ${sec.desc.length > 4 ? "space-y-2 sm:space-y-2.5" : "space-y-3 sm:space-y-4"}`}>
+                                                <span className={`absolute bottom-7 left-[35px] top-7 w-0.5 rounded-full bg-gradient-to-b ${sec.color} opacity-75`} />
+                                            {sec.desc.slice(0, expandedSections.includes(index) ? sec.desc.length : 5).map((item, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    initial={{ opacity: 0, x: 16 }}
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ delay: i * 0.07 }}
+                                                    whileHover={{ x: 4, y: -2 }}
+                                                    className={`group relative flex items-center overflow-hidden rounded-2xl border border-white/90 bg-[#fffdfa]/90 shadow-[0_8px_24px_rgba(74,55,40,0.07)] transition-all duration-300 hover:border-[#d85165]/20 hover:bg-white hover:shadow-[0_16px_34px_rgba(181,61,84,0.14)] ${sec.desc.length > 4 ? "min-h-[68px] gap-3 px-3 py-2.5 sm:min-h-[76px] sm:gap-4 sm:px-4 sm:py-3" : "min-h-[92px] gap-4 px-4 py-4 sm:min-h-[104px] sm:gap-5 sm:px-5 sm:py-4"}`}
+                                                >
+                                                    <span className={`absolute inset-y-4 left-0 w-1 rounded-r-full bg-gradient-to-b ${sec.color} opacity-70 transition-all group-hover:inset-y-3 group-hover:w-1.5`} />
+                                                    <span className={`relative z-10 flex shrink-0 items-center justify-center rounded-full border-[4px] border-[#fffdfa] bg-gradient-to-br ${sec.color} font-black text-[#4a3728] shadow-[0_5px_14px_rgba(74,55,40,0.16)] transition-transform group-hover:scale-110 ${sec.desc.length > 4 ? "h-8 w-8 text-[8px] sm:h-9 sm:w-9 sm:text-[9px]" : "h-10 w-10 text-[9px] sm:h-11 sm:w-11 sm:text-[10px]"}`}>
+                                                        0{i + 1}
+                                                    </span>
+                                                    <span className="flex-1">
+                                                        <span className={`block font-bold leading-relaxed text-[#4a3728] ${sec.desc.length > 4 ? "text-[12px] sm:text-[13px]" : "text-[13px] sm:text-sm"}`}>
+                                                            {item}
+                                                        </span>
+                                                        <span className={`block font-medium leading-relaxed text-[#9b7563] ${sec.desc.length > 4 ? "mt-0.5 text-[10px] sm:text-[11px]" : "mt-1 text-[11px] sm:text-xs"}`}>
+                                                            {sec.notes[i]}
+                                                        </span>
+                                                    </span>
+                                                    <span aria-hidden="true" className="ml-auto text-lg font-light text-[#b53d54]/35 transition-all group-hover:translate-x-1 group-hover:text-[#b53d54]">›</span>
+                                                </motion.div>
+                                            ))}
+                                            </div>
+                                            {sec.desc.length > 5 && (
+                                                <button
+                                                    type="button"
+                                                    aria-expanded={expandedSections.includes(index)}
+                                                    onClick={() => setExpandedSections((current) =>
+                                                        current.includes(index)
+                                                            ? current.filter((sectionIndex) => sectionIndex !== index)
+                                                            : [...current, index]
+                                                    )}
+                                                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-white/80 bg-white/70 px-4 py-3 text-xs font-black text-[#765b48] shadow-sm transition-all hover:border-[#d85165]/20 hover:bg-white hover:text-[#b53d54] hover:shadow-md"
+                                                >
+                                                    <span>{expandedSections.includes(index) ? "Thu gọn" : `Xem thêm ${sec.desc.length - 5} hoạt động`}</span>
+                                                    <span aria-hidden="true" className={`text-base transition-transform ${expandedSections.includes(index) ? "rotate-180" : ""}`}>⌄</span>
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className="relative pt-10">
+                            <motion.div
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.1 }}
+                                transition={{ duration: 0.7, delay: 0.18, ease: "easeOut" }}
+                                className="relative pt-10"
+                            >
+                                <div className="relative z-20 mx-auto mb-4 flex w-fit max-w-full items-center justify-center gap-3 rounded-full border border-white/90 bg-[#fffaf6]/95 px-5 py-2.5 text-center shadow-[0_8px_24px_rgba(74,55,40,0.12)] backdrop-blur-md sm:mb-5 sm:px-6">
+                                    <span className={`h-2 w-2 shrink-0 rounded-full bg-gradient-to-br ${sec.color}`} />
+                                    <span className="whitespace-nowrap text-[9px] font-black uppercase tracking-[0.14em] text-[#765b48] sm:text-[10px] sm:tracking-[0.18em]">
+                                        Những khoảnh khắc được lưu giữ
+                                    </span>
+                                    <span className={`h-2 w-2 shrink-0 rounded-full bg-gradient-to-br ${sec.color}`} />
+                                </div>
+                                <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+                                    <motion.span
+                                        className="absolute left-[3%] top-[24%] text-2xl opacity-50 drop-shadow-sm sm:left-[5%] sm:text-3xl"
+                                        animate={{ y: [0, -14, 4, 0], x: [0, 8, -3, 0], rotate: [0, 18, -12, 0], opacity: [0.35, 0.7, 0.45, 0.35] }}
+                                        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                                    >
+                                        🌸
+                                    </motion.span>
+                                    <motion.span
+                                        className="absolute right-[4%] top-[39%] text-xl opacity-45 sm:right-[6%] sm:text-2xl"
+                                        animate={{ y: [0, 12, -8, 0], x: [0, -7, 5, 0], rotate: [0, -24, 14, 0], opacity: [0.3, 0.6, 0.4, 0.3] }}
+                                        transition={{ duration: 8, delay: 0.8, repeat: Infinity, ease: "easeInOut" }}
+                                    >
+                                        🍃
+                                    </motion.span>
+                                    <motion.span
+                                        className="absolute left-[47%] top-[70%] text-lg text-[#d85165]/60 sm:left-[48%] sm:text-xl"
+                                        animate={{ y: [0, -10, 0], scale: [0.8, 1.15, 0.8], opacity: [0.25, 0.75, 0.25] }}
+                                        transition={{ duration: 3.8, delay: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                                    >
+                                        ✦
+                                    </motion.span>
+                                    <motion.span
+                                        className="absolute right-[24%] top-[11%] text-sm text-[#d85165]/50 sm:right-[28%] sm:text-base"
+                                        animate={{ y: [0, -8, 2, 0], rotate: [0, 45, 90], opacity: [0.2, 0.65, 0.2] }}
+                                        transition={{ duration: 4.5, delay: 0.5, repeat: Infinity, ease: "easeInOut" }}
+                                    >
+                                        ✧
+                                    </motion.span>
+                                </div>
                                 <WavyPlaneEffect />
-                                <div className="space-y-10 relative z-0">
+                                <div className="relative z-10 space-y-10">
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                                         {sec.row1Pools.map((pool, i) => (
-                                            <AutoChangingImage key={i} imageList={pool} index={i} isRow2={false} />
+                                            <AutoChangingImage key={i} imageList={pool} index={i} isRow2={false} entranceDelay={0.12 + i * 0.06} />
                                         ))}
                                     </div>
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6">
                                         {sec.row2Pools.map((pool, i) => (
-                                            <AutoChangingImage key={i} imageList={pool} index={i} isRow2={true} />
+                                            <AutoChangingImage key={i} imageList={pool} index={i} isRow2={true} entranceDelay={0.3 + i * 0.06} />
                                         ))}
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
 
                         {/* Footer Quote (Chỉ hiện ở phần cuối cùng) */}

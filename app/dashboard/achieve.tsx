@@ -45,7 +45,7 @@ const AwardsSection = () => {
             tag: "Hue-ICT Challenge 2026",
             title: "Giải Nhì Hue-ICT Challenge 2026",
             desc: "Hạng mục Sản phẩm sáng tạo CNTT",
-            image: "/picture/khenthuong/GiaiNhi.jpg",
+            image: "/picture/khenthuong/hueict2.jpg",
             icon: "🥈"
         }
     ];

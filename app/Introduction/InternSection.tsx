@@ -58,36 +58,36 @@ const InternshipRoadmap = () => {
 
             <section className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-col items-center px-4 sm:px-6 lg:px-6 xl:px-8 2xl:px-12">
 
-            
-                 <div className="relative mb-9 text-center sm:mb-10">
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full select-none pointer-events-none opacity-[0.1] overflow-hidden">
-                                        <span className="text-[100px] md:text-[140px] font-black whitespace-nowrap uppercase tracking-tighter text-[#4a3728]">
-                                            INTERN
-                                        </span>
-                                    </div>
-                
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ scale: 1.05 }}
-                                        className="relative inline-flex items-center gap-2 px-6 py-2 mb-4 rounded-full border-2 border-[#f2cbd4] bg-white/80 backdrop-blur-md shadow-lg transition-all hover:ring-4 hover:ring-[#f2cbd4]/40"
-                                    >
-                                        <Sparkles className="text-[#b53d54]" size={16} />
-                                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#b53d54] sm:text-[11px] sm:tracking-[0.4em]">Kinh nghiệm thực tế</span>
-                                    </motion.div>
-                
-                                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative">
-                                        <h2 className="text-3xl font-black leading-tight tracking-tighter text-[#4a3728] drop-shadow-md sm:text-4xl md:text-5xl">
-                                            Chặng đường Trải nghiệm <br />
-                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b53d54] via-[#f2cbd4] to-[#b53d54] animate-pulse">
-                                                của mình
-                                            </span>
-                                        </h2>
-                                    </motion.div>
-                                </div>
 
-                 
+                <div className="relative mb-9 text-center sm:mb-10">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full select-none pointer-events-none opacity-[0.1] overflow-hidden">
+                        <span className="text-[100px] md:text-[140px] font-black whitespace-nowrap uppercase tracking-tighter text-[#4a3728]">
+                            INTERN
+                        </span>
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.05 }}
+                        className="relative inline-flex items-center gap-2 px-6 py-2 mb-4 rounded-full border-2 border-[#f2cbd4] bg-white/80 backdrop-blur-md shadow-lg transition-all hover:ring-4 hover:ring-[#f2cbd4]/40"
+                    >
+                        <Sparkles className="text-[#b53d54]" size={16} />
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#b53d54] sm:text-[11px] sm:tracking-[0.4em]">Kinh nghiệm thực tế</span>
+                    </motion.div>
+
+                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative">
+                        <h2 className="text-3xl font-black leading-tight tracking-tighter text-[#4a3728] drop-shadow-md sm:text-4xl md:text-5xl">
+                            Chặng đường Trải nghiệm <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b53d54] via-[#f2cbd4] to-[#b53d54] animate-pulse">
+                                của mình
+                            </span>
+                        </h2>
+                    </motion.div>
+                </div>
+
+
 
                 {/* Container Roadmap */}
                 <div className="group relative w-full overflow-hidden rounded-[28px] border border-white/50 bg-white/25 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.1)] backdrop-blur-2xl sm:rounded-[36px] sm:p-5 md:p-6 lg:p-5 xl:rounded-[48px] xl:p-7 2xl:p-9">
@@ -167,7 +167,7 @@ const InternshipRoadmap = () => {
                                         />
                                     </div>
                                     <p className="text-[#4a3728]/80 text-[13px] leading-relaxed font-medium mb-5 text-justify italic">
-                                        "{INTERNSHIP_STEPS[0].desc}"
+                                        “{INTERNSHIP_STEPS[0].desc}”
                                     </p>
                                 </div>
                                 <div className="flex flex-wrap gap-2">
@@ -189,7 +189,7 @@ const InternshipRoadmap = () => {
                         >
                             <div className="group/img relative h-[230px] w-full overflow-hidden rounded-[24px] border-4 border-white shadow-2xl sm:h-[280px] lg:h-full lg:min-h-[270px] lg:rounded-[32px]">
                                 <Image
-                                    src="/picture/khenthuong/tt.jpg"
+                                    src="/picture/khenthuong/tt2.jpg"
                                     alt="Moments at work"
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 33vw"
@@ -247,7 +247,7 @@ const InternshipRoadmap = () => {
                                         />
                                     </div>
                                     <p className="text-[#4a3728]/80 text-[13px] leading-relaxed font-medium mb-5 text-justify italic">
-                                        "{INTERNSHIP_STEPS[1].desc}"
+                                        “{INTERNSHIP_STEPS[1].desc}”
                                     </p>
                                 </div>
                                 <div className="flex flex-wrap gap-2 lg:justify-end">
@@ -335,7 +335,7 @@ const InternshipRoadmap = () => {
                                 <Quote size={28} className="text-[#b53d54] opacity-40" />
                             </div>
                             <p className="text-sm md:text-base font-bold text-[#4a3728]/80 italic leading-relaxed">
-                                "Những trải nghiệm thực tập này là nền tảng quan trọng giúp mình hiểu rõ về môi trường chuyên nghiệp và định hướng tương lai."
+                                “Những trải nghiệm thực tập này là nền tảng quan trọng giúp mình hiểu rõ về môi trường chuyên nghiệp và định hướng tương lai.”
                             </p>
                         </div>
 

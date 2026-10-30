@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-    Sparkles, ArrowRight, Code, Microscope, Terminal, Quote
+    Sparkles, ArrowRight, Code, Microscope, Terminal, Quote, Award, BookOpen
 } from 'lucide-react';
 import { Variants } from "framer-motion";
 import Link from 'next/link';
@@ -198,7 +198,31 @@ const StudentJourneyMirror = () => {
 
                         {/* THẺ 6: ẢNH KỶ NIỆM 3 */}
                         <motion.div variants={fadeInUp} className="md:col-span-4 bg-gray-200 rounded-[35px] overflow-hidden border border-white/20 group">
-                            <img src="picture/khenthuong/anhnckh.jpg" alt="Teamwork" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <img src="picture/khenthuong/hueict1.jpg" alt="Teamwork" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        </motion.div>
+
+                        {/* THÀNH TÍCH: HUE-ICT CHALLENGE 2026 */}
+                        <motion.div variants={fadeInUp} whileHover={{ y: -10 }} className="md:col-span-6 bg-[#4a3728] rounded-[35px] p-7 text-white shadow-2xl flex flex-col transition-shadow hover:shadow-black/30">
+                            <div className="flex justify-between items-start mb-4">
+                                <div className="p-2 bg-white/10 rounded-xl"><Award size={22} className="text-amber-400" /></div>
+                                <span className="text-[11px] font-bold bg-white/10 px-3 py-1 rounded-full">2026</span>
+                            </div>
+                            <h3 className="text-base font-black uppercase mb-2 tracking-tight">Giải Nhì - HUE-ICT Challenge</h3>
+                            <p className="text-[11px] leading-relaxed opacity-90 font-light">
+                                Đạt Giải Nhì Sản phẩm sáng tạo công nghệ thông tin dành cho sinh viên với đề tài “Nghiên cứu phương pháp kết hợp đặc trưng đa nguồn dựa trên Gated Fusion cho bài toán chẩn đoán bệnh viêm phổi từ ảnh X-quang”.
+                            </p>
+                        </motion.div>
+
+                        {/* THÀNH TÍCH: BÀI BÁO KHOA HỌC */}
+                        <motion.div variants={fadeInUp} whileHover={{ y: -10 }} className="md:col-span-6 bg-white/90 backdrop-blur-md rounded-[35px] p-7 text-[#4a3728] shadow-xl border border-white flex flex-col">
+                            <div className="flex justify-between items-start mb-4">
+                                <div className="p-2 bg-[#b53d54]/10 rounded-xl"><BookOpen size={22} className="text-[#b53d54]" /></div>
+                                <span className="text-[11px] font-bold bg-[#b53d54]/10 text-[#b53d54] px-3 py-1 rounded-full">Nghiên cứu khoa học</span>
+                            </div>
+                            <h3 className="text-base font-black uppercase mb-2 tracking-tight">Bài báo tạp chí được công bố</h3>
+                            <p className="text-[11px] leading-relaxed font-medium text-[#4a3728]/80">
+                                Công bố tại Trường Đại học Khoa học, Đại học Huế: “Phương pháp kết hợp đặc trưng thích nghi cho bài toán phân lớp bệnh viêm phổi từ hình ảnh X-quang lồng ngực”.
+                            </p>
                         </motion.div>
 
                     </div>

@@ -247,7 +247,7 @@ export default function AboutPage() {
                 <div className="hidden md:block absolute right-0 top-0 h-full w-[47%] z-10" >
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="relative h-full w-full">
                         <Image
-                            src="/picture/khenthuong/l8.jpg"
+                            src="/picture/anhcv/anhgt1.jpg"
                             alt="Linh"
                             fill
                             className="object-cover grayscale-[10%] contrast-[1.05]"

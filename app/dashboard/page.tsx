@@ -56,7 +56,7 @@ const Appdashboard = () => {
                             <div className="absolute inset-0 z-10 p-12 md:p-14 flex items-center justify-center">
                                 <div className="relative w-full h-[420px] -mt-6">
                                     <Image
-                                        src="/picture/anhcv/khanhlinh.png"
+                                        src="/picture/anhcv/anhKL5.png"
                                         alt="Khánh Linh"
                                         fill
                                         className="object-contain"
@@ -152,7 +152,7 @@ const Appdashboard = () => {
 
                             {/* --- NỘI DUNG CHÍNH --- */}
                             <div className="relative z-10">
-                                {/* Header: Tên Lê Nhật Tường */}
+                                {/* Header: */}
                                 <div className="mb-6">
                                     <span className="text-lg md:text-xl text-[#d88c51] font-semibold mb-2 block tracking-tight">
                                         Xin chào, mình là

@@ -173,23 +173,49 @@ export default function EnhancedBloomingGallery() {
             <div key={idx} className={`relative flex flex-col items-center gap-24 ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
 
               {/* Nội dung văn bản */}
-              <div className="flex-1 flex flex-wrap gap-4 z-20 justify-center lg:justify-start">
-                <div className="w-full flex items-center gap-5 mb-12 justify-center lg:justify-start">
-                  <div className="w-16 h-16 bg-white rounded-3xl shadow-2xl border border-rose-50 flex items-center justify-center">
-                    {group.icon}
+              <div className="relative z-20 w-full flex-1">
+                <div className="pointer-events-none absolute -left-8 -top-8 h-40 w-40 rounded-full bg-rose-200/30 blur-3xl" />
+                <div className="relative mb-7 flex items-center justify-between gap-4 border-b border-[#d85165]/15 pb-5 sm:mb-8">
+                  <div className="flex min-w-0 items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[1.25rem] border border-white bg-gradient-to-br from-white to-rose-50 shadow-[0_10px_28px_rgba(216,81,101,0.14)] sm:h-16 sm:w-16 sm:rounded-[1.5rem]">
+                      {group.icon}
+                    </div>
+                    <div className="min-w-0">
+                      <span className="mb-1 block text-[9px] font-black uppercase tracking-[0.22em] text-[#d85165]/70 sm:text-[10px]">
+                        Dấu ấn nổi bật
+                      </span>
+                      <h3 className="text-2xl font-black leading-tight tracking-tight text-[#422f27] sm:text-3xl">
+                        {group.category}
+                      </h3>
+                    </div>
                   </div>
-                  <h3 className="text-4xl font-black text-[#422f27] italic">{group.category}</h3>
+                  <span className="shrink-0 rounded-full border border-rose-100 bg-white/80 px-3 py-1.5 text-[9px] font-black tracking-[0.12em] text-[#9b7563] shadow-sm sm:px-3.5 sm:text-[10px]">
+                    {String(group.items.length).padStart(2, "0")} MỤC
+                  </span>
                 </div>
-                {group.items.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-8 py-4 bg-white/80 backdrop-blur-sm shadow-xl border border-rose-50 rounded-full flex items-center gap-3"
-                  >
-                    <Sparkles size={12} className="text-rose-400" />
-                    <span className="text-base font-bold text-[#5c4033]">{item.text}</span>
-                  </motion.div>
-                ))}
+
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {group.items.map((item, i) => (
+                    <motion.div
+                      key={item.text}
+                      initial={{ opacity: 0, y: 14 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ delay: i * 0.08, duration: 0.45 }}
+                      whileHover={{ y: -4 }}
+                      className="group/achievement relative flex min-h-[82px] items-center gap-3 overflow-hidden rounded-2xl border border-white/90 bg-white/75 px-4 py-4 shadow-[0_8px_24px_rgba(74,55,40,0.07)] backdrop-blur-md transition-all duration-300 hover:border-rose-200 hover:bg-white hover:shadow-[0_14px_30px_rgba(216,81,101,0.14)] sm:min-h-[92px] sm:gap-4 sm:px-5"
+                    >
+                      <span className="absolute inset-y-3 left-0 w-1 rounded-r-full bg-gradient-to-b from-[#ff9a9e] to-[#f7c8d0] transition-all group-hover/achievement:inset-y-2 group-hover/achievement:w-1.5" />
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-[10px] font-black tracking-wide text-[#b53d54] transition-colors group-hover/achievement:bg-[#d85165] group-hover/achievement:text-white">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[13px] font-bold leading-relaxed text-[#5c4033] sm:text-sm">
+                        {item.text}
+                      </span>
+                      <Sparkles size={13} className="ml-auto shrink-0 text-rose-300/70 transition-all group-hover/achievement:rotate-12 group-hover/achievement:text-[#d85165]" />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
               {/* BÔNG HOA TO & TRÒN TRỊA */}
