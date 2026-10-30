@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./component/header";
 import { Sedgwick_Ave_Display } from 'next/font/google';
 import ArtisticFooter from "./component/Footer";
+import ScrollProgress from "./component/ScrollProgress";
 
 const sedgwick = Sedgwick_Ave_Display({
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${sedgwick.variable} h-full antialiased`}
     >
       <body className={lora.className}>
+        <ScrollProgress />
         <Header />
         {children}
         <ArtisticFooter />

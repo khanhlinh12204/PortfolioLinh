@@ -39,6 +39,14 @@ const AwardsSection = () => {
             desc: "Đạt học bổng chương trình học bổng “NEVER GIVE UP” năm 2024",
             image: "/picture/khenthuong/hb.jpg",
             icon: "🌿"
+        },
+        {
+            id: 5,
+            tag: "Hue-ICT Challenge 2026",
+            title: "Giải Nhì Hue-ICT Challenge 2026",
+            desc: "Hạng mục Sản phẩm sáng tạo CNTT",
+            image: "/picture/khenthuong/GiaiNhi.jpg",
+            icon: "🥈"
         }
     ];
 
@@ -81,7 +89,7 @@ const AwardsSection = () => {
                 ))}
             </div>
 
-            <div className="container mx-auto px-6 relative z-20">
+            <div className="relative z-20 mx-auto w-full max-w-[1600px] px-5 sm:px-8 2xl:px-12">
 
                 {/* 3. TIÊU ĐỀ */}
                 <div className="relative flex flex-col items-center mb-16 text-center">
@@ -136,7 +144,7 @@ const AwardsSection = () => {
                 </div>
 
                 {/* 4. GRID CARDS */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-center">
+                <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 lg:grid-cols-5 lg:gap-4 2xl:gap-6">
                     {awards.map((item, index) => (
                         <motion.div
                             key={item.id}
@@ -147,13 +155,11 @@ const AwardsSection = () => {
                         >
                             <div className="absolute inset-[-15px] bg-[#d85165]/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-                            <div className="relative bg-white/20 backdrop-blur-md border border-white/40 p-5 pb-10 shadow-xl 
-                                          rounded-[50%_50%_45%_55%/55%_45%_55%_45%] transition-all duration-700 
-                                          group-hover:border-[#d85165]/40 
-                                          group-hover:shadow-[0_0_50px_15px_rgba(216,81,101,0.25)]
-                                          w-full max-w-[360px] flex flex-col items-center z-10">
+                            <div className="relative z-10 flex w-full max-w-[390px] flex-col items-center rounded-[50%_50%_45%_55%/55%_45%_55%_45%] border border-white/50 bg-white/25 p-5 pb-9 shadow-xl backdrop-blur-md transition-all duration-700
+                                          group-hover:border-[#d85165]/40
+                                          group-hover:shadow-[0_0_50px_15px_rgba(216,81,101,0.25)]">
 
-                                <div className="relative w-64 h-64 mb-6 border-[12px] border-white shadow-2xl overflow-hidden rounded-full transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-0 -rotate-3">
+                                <div className="relative mb-5 h-36 w-36 shrink-0 overflow-hidden rounded-full border-[7px] border-white shadow-2xl -rotate-3 transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-0 lg:h-40 lg:w-40 xl:h-48 xl:w-48 2xl:h-56 2xl:w-56">
                                     <Image
                                         src={item.image}
                                         alt={item.title}
@@ -163,14 +169,14 @@ const AwardsSection = () => {
                                     <div className="absolute inset-0 bg-[#d85165]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                                 </div>
 
-                                <div className="text-center px-4">
-                                    <span className="inline-block px-4 py-1 rounded-full bg-[#d85165]/20 text-[#d85165] text-[10px] font-bold mb-3 uppercase tracking-[0.2em]">
+                                <div className="w-full min-w-0 px-1 text-center sm:px-3">
+                                    <span className="mb-3 inline-block max-w-full whitespace-normal break-words rounded-full bg-[#d85165]/20 px-3 py-1 text-[8px] font-bold uppercase leading-relaxed tracking-[0.08em] text-[#d85165] sm:px-4">
                                         {item.tag}
                                     </span>
-                                    <h3 className="text-xl font-bold text-[#4a3728] mb-2 leading-tight">
+                                    <h3 className="mb-2 break-words text-sm font-bold leading-snug text-[#4a3728] sm:text-[15px] xl:text-base">
                                         {item.icon} {item.title}
                                     </h3>
-                                    <p className="text-xs text-[#6f5643] leading-relaxed opacity-90 font-medium">
+                                    <p className="mx-auto max-w-[190px] break-words text-[9px] font-medium leading-relaxed text-[#6f5643] opacity-90 sm:text-[10px]">
                                         {item.desc}
                                     </p>
                                 </div>

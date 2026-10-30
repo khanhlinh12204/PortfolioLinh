@@ -22,7 +22,7 @@ export default function Header() {
             name: "Kỹ Năng", href: "/ItemSection",
             subMenu: [
                 { name: "Kỹ năng chuyên môn", href: "/ItemSection/skillcmSection" },
-                { name: "kỹ năng mềm", href: "/ItemSection/skillmSection" },
+                { name: "Kỹ năng mềm", href: "/ItemSection/skillmSection" },
             ]
         },
         {

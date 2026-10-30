@@ -9,7 +9,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 const INFO_STATS = [
     { label: "Chuyên ngành", value: "Khoa học máy tính" },
     { label: "Học vấn", value: "ĐH Khoa học Huế" },
-    { label: "Thành tích", value: "GPA 3.64 / 4.0" },
+    { label: "Thành tích", value: "GPA 3.68 / 4.0" },
 ];
 
 // CHỈ THAY ĐỔI MẢNG NÀY ĐỂ ẢNH TO VÀ AN TOÀN

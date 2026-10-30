@@ -9,7 +9,7 @@ const softSkills = [
     {
         title: "Teamwork & Communication",
         sub: "Sự thấu hiểu từ trái tim",
-        desc: "Có khả năng làm việc nhóm hiệu quả, giao tiếp rõ ràng và phối hợp tốt trong các dự án học thuật và hoạt động tập thể.",
+        desc: "Phối hợp với các thành viên, trao đổi thông tin rõ ràng và cùng hướng đến mục tiêu chung trong dự án, hoạt động tập thể.",
         image: "/picture/khenthuong/anhhd11.jpg",
         icon: <Users size={18} />,
         color: "bg-pink-100/30",
@@ -19,8 +19,8 @@ const softSkills = [
     },
     {
         title: "Active Listening",
-        sub: "Dẫn dắt nhẹ nhàng, hiệu quả",
-        desc: "Biết lắng nghe, tiếp thu ý kiến đóng góp và phản hồi một cách tích cực để cải thiện bản thân.",
+        sub: "Lắng nghe chủ động",
+        desc: "Chú ý tiếp nhận ý kiến, đặt câu hỏi khi cần và phản hồi tích cực để thấu hiểu vấn đề, phối hợp hiệu quả hơn.",
         image: "/picture/khenthuong/anhhd12.jpg",
         icon: <MessageCircle size={18} />,
         color: "bg-orange-100/30",
@@ -30,8 +30,8 @@ const softSkills = [
     },
     {
         title: "Problem Solving",
-        sub: "Gỡ nút thắt bằng sự tỉ mỉ",
-        desc: "Có tư duy phân tích và khả năng giải quyết vấn đề logic trong học tập cũng như trong lập trình.",
+        sub: "Phân tích & tìm giải pháp",
+        desc: "Tiếp cận vấn đề theo từng bước, phân tích nguyên nhân và lựa chọn hướng xử lý phù hợp trong học tập, lập trình.",
         image: "/picture/khenthuong/anhhd13.jpg",
         icon: <Brain size={18} />,
         color: "bg-blue-100/30",
@@ -41,8 +41,8 @@ const softSkills = [
     },
     {
         title: "Self-learning",
-        sub: "Nhịp điệu của sự cân bằng",
-        desc: "Chủ động tìm tòi, học hỏi công nghệ mới và không ngừng nâng cao kiến thức cá nhân.",
+        sub: "Chủ động cập nhật kiến thức",
+        desc: "Tự tìm kiếm tài liệu, học hỏi công nghệ mới và chủ động bổ sung kiến thức phục vụ học tập, phát triển chuyên môn.",
         image: "/picture/khenthuong/anhhd14.jpg",
         icon: <BookOpen size={18} />,
         color: "bg-purple-100/30",
@@ -53,7 +53,7 @@ const softSkills = [
     {
         title: "Time Management",
         sub: "Quản trị thời gian",
-        desc: "Biết quản lý thời gian hợp lý giữa học tập, hoạt động ngoại khóa và phát triển cá nhân.",
+        desc: "Sắp xếp công việc theo mức độ ưu tiên, cân đối thời gian học tập, hoạt động ngoại khóa và phát triển cá nhân.",
         image: "/picture/khenthuong/anhhd15.jpg",
         icon: <Timer size={18} />,
         color: "bg-pink-100/30",
@@ -64,7 +64,7 @@ const softSkills = [
     {
         title: "Leadership & Organization",
         sub: "Điều phối & Tổ chức",
-        desc: "Có kinh nghiệm tổ chức hoạt động, điều phối công việc và làm việc với vai trò quản lý trong các CLB và lớp học.",
+        desc: "Tham gia tổ chức hoạt động, phân chia và theo dõi công việc, kết nối thành viên trong các hoạt động CLB và lớp học.",
         image: "/picture/khenthuong/anhhd17.jpg",
         icon: <Target size={18} />,
         color: "bg-orange-100/30",
@@ -75,7 +75,7 @@ const softSkills = [
     {
         title: "Teaching Assistant",
         sub: "Hỗ trợ giảng dạy",
-        desc: "Hỗ trợ giảng dạy, hướng dẫn các bạn sinh viên khác trong học tập và lập trình cơ bản.",
+        desc: "Hỗ trợ giải thích kiến thức, hướng dẫn bài tập và đồng hành cùng sinh viên trong các nội dung học tập, lập trình cơ bản.",
         image: "/picture/khenthuong/anhsp.jpg",
         icon: <GraduationCap size={18} />,
         color: "bg-blue-100/30",
@@ -98,26 +98,30 @@ export default function SoftSkillSoftDesign() {
 
             {/* Hiệu ứng cánh hoa rơi */}
             <div className="absolute inset-0 pointer-events-none z-10">
-                {[...Array(15)].map((_, i) => (
+                {[...Array(15)].map((_, i) => {
+                    const left = (i * 37) % 100;
+                    const drift = (i % 2 === 0 ? 1 : -1) * (30 + (i % 4) * 12);
+                    return (
                     <motion.div
                         key={i}
                         animate={{
                             y: [0, 900],
-                            x: [0, Math.random() * 120 - 60],
+                            x: [0, drift],
                             rotate: [0, 720]
                         }}
                         transition={{
-                            duration: 12 + Math.random() * 15,
+                            duration: 14 + (i % 5) * 2,
                             repeat: Infinity,
-                            delay: i * 1.5,
+                            delay: (i % 8) * 1.5,
                             ease: "linear"
                         }}
                         className="absolute text-2xl opacity-20"
-                        style={{ left: `${Math.random() * 100}%`, top: "-10%" }}
+                        style={{ left: `${left}%`, top: "-10%" }}
                     >
                         {i % 2 === 0 ? "🌸" : "🍃"}
                     </motion.div>
-                ))}
+                    );
+                })}
             </div>
 
             <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
@@ -141,7 +145,7 @@ export default function SoftSkillSoftDesign() {
                             <h2 className="text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter">Kỹ năng <br /><span className="italic font-light text-[#ff8fa3]">mềm.</span></h2>
                         </div>
                         <p className="max-w-[320px] text-[#8b6d4d] text-sm italic font-medium border-l-2 border-[#ffb7c5] pl-4 leading-relaxed bg-white/40 backdrop-blur-sm p-2 rounded-r-lg shadow-sm">
-                            "Sự kết hợp giữa kiến thức chuyên môn và kỹ năng mềm là chìa khóa để tạo nên những giá trị bền vững."
+                            Sự kết hợp giữa kiến thức chuyên môn và kỹ năng mềm là chìa khóa để tạo nên những giá trị bền vững.
                         </p>
                     </motion.div>
 
@@ -161,24 +165,29 @@ export default function SoftSkillSoftDesign() {
                                         delay: (i % 4) * 0.1,
                                         ease: "easeOut"
                                     }}
-                                    whileHover={{ y: -8, scale: 1.02 }}
-                                    className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 p-7
-                                        bg-white/50 backdrop-blur-xl border-2 ${skill.borderColor} ${skill.glowColor}
-                                        rounded-[40px] transition-all duration-500 overflow-hidden relative group`}
+                                    whileHover={{ y: -5 }}
+                                    className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-5 p-5 sm:p-6
+                                        bg-white/65 backdrop-blur-xl border ${skill.borderColor} ${skill.glowColor}
+                                        rounded-[30px] transition-all duration-300 overflow-hidden relative group hover:bg-white/85 hover:shadow-[0_22px_50px_rgba(74,55,40,0.12)]`}
                                 >
-                                    <div className="absolute -inset-full top-0 h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine z-0" />
-                                    <div className="flex-shrink-0 w-full max-w-[1300px] aspect-square relative z-10 lg:w-[130px] lg:h-[130px]">
-                                        <div className={`relative aspect-square ${skill.blob} overflow-hidden shadow-inner border-white border-[6px]`}>
+                                    <div className={`absolute inset-x-8 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#d85165]/40 to-transparent ${i % 2 === 0 ? "md:left-40" : "md:right-40"}`} />
+                                    <div className="relative z-10 h-[116px] w-[116px] shrink-0 sm:h-[132px] sm:w-[132px]">
+                                        <div className={`relative h-full w-full ${skill.blob} overflow-hidden border-[5px] border-white shadow-[0_10px_26px_rgba(74,55,40,0.12)]`}>
                                             <img src={skill.image} alt={skill.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                         </div>
                                     </div>
-                                    <div className={`flex-1 ${skill.color} p-6 rounded-[30px] relative z-10`}>
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <span className="text-[#d85165]">{skill.icon}</span>
-                                            <span className="text-[#d85165] italic text-sm">{skill.sub}</span>
+                                    <div className={`relative z-10 w-full flex-1 ${skill.color} p-5 sm:p-6 rounded-[24px] border border-white/60`}>
+                                        <div className="mb-3 flex items-center justify-between gap-3">
+                                            <div className="flex min-w-0 items-center gap-2">
+                                                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-white/75 text-[#d85165] shadow-sm">{skill.icon}</span>
+                                                <span className="truncate text-[11px] font-semibold uppercase tracking-[0.12em] text-[#a65c67]">{skill.sub}</span>
+                                            </div>
+                                            <span className="shrink-0 text-[10px] font-bold tracking-[0.18em] text-[#a65c67]/70">
+                                                {String(i + 1).padStart(2, "0")}
+                                            </span>
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#4a3728] mb-2 tracking-tight">{skill.title}</h3>
-                                        <p className="text-gray-700 text-sm leading-relaxed font-medium">{skill.desc}</p>
+                                        <h3 className="mb-2 text-lg font-bold tracking-tight text-[#4a3728] transition-colors group-hover:text-[#b64c60] sm:text-xl">{skill.title}</h3>
+                                        <p className="text-[13px] font-medium leading-[1.75] text-[#6f5c55]">{skill.desc}</p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -237,7 +246,7 @@ export default function SoftSkillSoftDesign() {
                         <span className="text-[#d85165] font-bold tracking-[0.4em] uppercase text-xs opacity-70">Aspirations</span>
                         <div className="h-[2px] w-16 bg-[#d85165]/20 mx-auto my-4 rounded-full"></div>
                         <p className="text-[#4a3728] text-lg italic font-medium max-w-sm leading-relaxed">
-                            "Mỗi trải nghiệm là một cơ hội để mình trưởng thành hơn mỗi ngày."
+                            Mỗi trải nghiệm là một cơ hội để mình trưởng thành hơn mỗi ngày.
                         </p>
                     </motion.div>
                 </div>

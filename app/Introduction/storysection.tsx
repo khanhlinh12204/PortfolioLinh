@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Quote, Sparkles, GraduationCap, Code, Rocket, Star, Heart, Brain, Zap, Compass } from 'lucide-react';
 
 const GLOSSY_STYLES = [
@@ -27,9 +27,6 @@ const PHILOSOPHY_LIST = [
 
 export default function JourneyStorySection() {
     const [isMounted, setIsMounted] = useState(false);
-    const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
-
     useEffect(() => { setIsMounted(true); }, []);
     if (!isMounted) return null;
 
@@ -117,8 +114,6 @@ export default function JourneyStorySection() {
                     </motion.div>
                 ))}
             </div>
-
-            <motion.div style={{ scaleX }} className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#b53d54] via-[#f2cbd4] to-[#f9dcc4] origin-left z-[100] shadow-[0_0_15px_rgba(181,61,84,0.5)]" />
 
             <div className="max-w-5xl mx-auto px-6 relative z-20">
 
